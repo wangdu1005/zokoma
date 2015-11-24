@@ -1,0 +1,508 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		820F56631C04309F00EBC7DE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820F56621C04309F00EBC7DE /* AppDelegate.swift */; };
+		820F56651C04309F00EBC7DE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820F56641C04309F00EBC7DE /* ViewController.swift */; };
+		820F56681C04309F00EBC7DE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 820F56661C04309F00EBC7DE /* Main.storyboard */; };
+		820F566A1C04309F00EBC7DE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 820F56691C04309F00EBC7DE /* Assets.xcassets */; };
+		820F566D1C04309F00EBC7DE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 820F566B1C04309F00EBC7DE /* LaunchScreen.storyboard */; };
+		820F56781C04309F00EBC7DE /* ZokomaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820F56771C04309F00EBC7DE /* ZokomaTests.swift */; };
+		820F56831C04309F00EBC7DE /* ZokomaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820F56821C04309F00EBC7DE /* ZokomaUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		820F56741C04309F00EBC7DE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 820F56571C04309F00EBC7DE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 820F565E1C04309F00EBC7DE;
+			remoteInfo = Zokoma;
+		};
+		820F567F1C04309F00EBC7DE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 820F56571C04309F00EBC7DE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 820F565E1C04309F00EBC7DE;
+			remoteInfo = Zokoma;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		820F565F1C04309F00EBC7DE /* Zokoma.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Zokoma.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		820F56621C04309F00EBC7DE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		820F56641C04309F00EBC7DE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		820F56671C04309F00EBC7DE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		820F56691C04309F00EBC7DE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		820F566C1C04309F00EBC7DE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		820F566E1C04309F00EBC7DE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		820F56731C04309F00EBC7DE /* ZokomaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZokomaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		820F56771C04309F00EBC7DE /* ZokomaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZokomaTests.swift; sourceTree = "<group>"; };
+		820F56791C04309F00EBC7DE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		820F567E1C04309F00EBC7DE /* ZokomaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZokomaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		820F56821C04309F00EBC7DE /* ZokomaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZokomaUITests.swift; sourceTree = "<group>"; };
+		820F56841C04309F00EBC7DE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		820F565C1C04309F00EBC7DE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		820F56701C04309F00EBC7DE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		820F567B1C04309F00EBC7DE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		820F56561C04309F00EBC7DE = {
+			isa = PBXGroup;
+			children = (
+				820F56611C04309F00EBC7DE /* Zokoma */,
+				820F56761C04309F00EBC7DE /* ZokomaTests */,
+				820F56811C04309F00EBC7DE /* ZokomaUITests */,
+				820F56601C04309F00EBC7DE /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		820F56601C04309F00EBC7DE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				820F565F1C04309F00EBC7DE /* Zokoma.app */,
+				820F56731C04309F00EBC7DE /* ZokomaTests.xctest */,
+				820F567E1C04309F00EBC7DE /* ZokomaUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		820F56611C04309F00EBC7DE /* Zokoma */ = {
+			isa = PBXGroup;
+			children = (
+				820F56621C04309F00EBC7DE /* AppDelegate.swift */,
+				820F56641C04309F00EBC7DE /* ViewController.swift */,
+				820F56661C04309F00EBC7DE /* Main.storyboard */,
+				820F56691C04309F00EBC7DE /* Assets.xcassets */,
+				820F566B1C04309F00EBC7DE /* LaunchScreen.storyboard */,
+				820F566E1C04309F00EBC7DE /* Info.plist */,
+			);
+			path = Zokoma;
+			sourceTree = "<group>";
+		};
+		820F56761C04309F00EBC7DE /* ZokomaTests */ = {
+			isa = PBXGroup;
+			children = (
+				820F56771C04309F00EBC7DE /* ZokomaTests.swift */,
+				820F56791C04309F00EBC7DE /* Info.plist */,
+			);
+			path = ZokomaTests;
+			sourceTree = "<group>";
+		};
+		820F56811C04309F00EBC7DE /* ZokomaUITests */ = {
+			isa = PBXGroup;
+			children = (
+				820F56821C04309F00EBC7DE /* ZokomaUITests.swift */,
+				820F56841C04309F00EBC7DE /* Info.plist */,
+			);
+			path = ZokomaUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		820F565E1C04309F00EBC7DE /* Zokoma */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 820F56871C04309F00EBC7DE /* Build configuration list for PBXNativeTarget "Zokoma" */;
+			buildPhases = (
+				820F565B1C04309F00EBC7DE /* Sources */,
+				820F565C1C04309F00EBC7DE /* Frameworks */,
+				820F565D1C04309F00EBC7DE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Zokoma;
+			productName = Zokoma;
+			productReference = 820F565F1C04309F00EBC7DE /* Zokoma.app */;
+			productType = "com.apple.product-type.application";
+		};
+		820F56721C04309F00EBC7DE /* ZokomaTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 820F568A1C04309F00EBC7DE /* Build configuration list for PBXNativeTarget "ZokomaTests" */;
+			buildPhases = (
+				820F566F1C04309F00EBC7DE /* Sources */,
+				820F56701C04309F00EBC7DE /* Frameworks */,
+				820F56711C04309F00EBC7DE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				820F56751C04309F00EBC7DE /* PBXTargetDependency */,
+			);
+			name = ZokomaTests;
+			productName = ZokomaTests;
+			productReference = 820F56731C04309F00EBC7DE /* ZokomaTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		820F567D1C04309F00EBC7DE /* ZokomaUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 820F568D1C04309F00EBC7DE /* Build configuration list for PBXNativeTarget "ZokomaUITests" */;
+			buildPhases = (
+				820F567A1C04309F00EBC7DE /* Sources */,
+				820F567B1C04309F00EBC7DE /* Frameworks */,
+				820F567C1C04309F00EBC7DE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				820F56801C04309F00EBC7DE /* PBXTargetDependency */,
+			);
+			name = ZokomaUITests;
+			productName = ZokomaUITests;
+			productReference = 820F567E1C04309F00EBC7DE /* ZokomaUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		820F56571C04309F00EBC7DE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0710;
+				LastUpgradeCheck = 0710;
+				ORGANIZATIONNAME = jiro9611;
+				TargetAttributes = {
+					820F565E1C04309F00EBC7DE = {
+						CreatedOnToolsVersion = 7.1.1;
+						DevelopmentTeam = TC7WN99QX5;
+					};
+					820F56721C04309F00EBC7DE = {
+						CreatedOnToolsVersion = 7.1.1;
+						DevelopmentTeam = TC7WN99QX5;
+						TestTargetID = 820F565E1C04309F00EBC7DE;
+					};
+					820F567D1C04309F00EBC7DE = {
+						CreatedOnToolsVersion = 7.1.1;
+						DevelopmentTeam = TC7WN99QX5;
+						TestTargetID = 820F565E1C04309F00EBC7DE;
+					};
+				};
+			};
+			buildConfigurationList = 820F565A1C04309F00EBC7DE /* Build configuration list for PBXProject "Zokoma" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 820F56561C04309F00EBC7DE;
+			productRefGroup = 820F56601C04309F00EBC7DE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				820F565E1C04309F00EBC7DE /* Zokoma */,
+				820F56721C04309F00EBC7DE /* ZokomaTests */,
+				820F567D1C04309F00EBC7DE /* ZokomaUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		820F565D1C04309F00EBC7DE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				820F566D1C04309F00EBC7DE /* LaunchScreen.storyboard in Resources */,
+				820F566A1C04309F00EBC7DE /* Assets.xcassets in Resources */,
+				820F56681C04309F00EBC7DE /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		820F56711C04309F00EBC7DE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		820F567C1C04309F00EBC7DE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		820F565B1C04309F00EBC7DE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				820F56651C04309F00EBC7DE /* ViewController.swift in Sources */,
+				820F56631C04309F00EBC7DE /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		820F566F1C04309F00EBC7DE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				820F56781C04309F00EBC7DE /* ZokomaTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		820F567A1C04309F00EBC7DE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				820F56831C04309F00EBC7DE /* ZokomaUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		820F56751C04309F00EBC7DE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 820F565E1C04309F00EBC7DE /* Zokoma */;
+			targetProxy = 820F56741C04309F00EBC7DE /* PBXContainerItemProxy */;
+		};
+		820F56801C04309F00EBC7DE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 820F565E1C04309F00EBC7DE /* Zokoma */;
+			targetProxy = 820F567F1C04309F00EBC7DE /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		820F56661C04309F00EBC7DE /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				820F56671C04309F00EBC7DE /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		820F566B1C04309F00EBC7DE /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				820F566C1C04309F00EBC7DE /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		820F56851C04309F00EBC7DE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		820F56861C04309F00EBC7DE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		820F56881C04309F00EBC7DE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Zokoma/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.jiro9611.Zokoma;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		820F56891C04309F00EBC7DE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Zokoma/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.jiro9611.Zokoma;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		820F568B1C04309F00EBC7DE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = ZokomaTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.jiro9611.ZokomaTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Zokoma.app/Zokoma";
+			};
+			name = Debug;
+		};
+		820F568C1C04309F00EBC7DE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = ZokomaTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.jiro9611.ZokomaTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Zokoma.app/Zokoma";
+			};
+			name = Release;
+		};
+		820F568E1C04309F00EBC7DE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = ZokomaUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.jiro9611.ZokomaUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = Zokoma;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		820F568F1C04309F00EBC7DE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = ZokomaUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.jiro9611.ZokomaUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = Zokoma;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		820F565A1C04309F00EBC7DE /* Build configuration list for PBXProject "Zokoma" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				820F56851C04309F00EBC7DE /* Debug */,
+				820F56861C04309F00EBC7DE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		820F56871C04309F00EBC7DE /* Build configuration list for PBXNativeTarget "Zokoma" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				820F56881C04309F00EBC7DE /* Debug */,
+				820F56891C04309F00EBC7DE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		820F568A1C04309F00EBC7DE /* Build configuration list for PBXNativeTarget "ZokomaTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				820F568B1C04309F00EBC7DE /* Debug */,
+				820F568C1C04309F00EBC7DE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		820F568D1C04309F00EBC7DE /* Build configuration list for PBXNativeTarget "ZokomaUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				820F568E1C04309F00EBC7DE /* Debug */,
+				820F568F1C04309F00EBC7DE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 820F56571C04309F00EBC7DE /* Project object */;
+}
