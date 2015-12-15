@@ -8,12 +8,28 @@
 
 /* Begin PBXBuildFile section */
 		820F56631C04309F00EBC7DE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820F56621C04309F00EBC7DE /* AppDelegate.swift */; };
-		820F56651C04309F00EBC7DE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820F56641C04309F00EBC7DE /* ViewController.swift */; };
 		820F56681C04309F00EBC7DE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 820F56661C04309F00EBC7DE /* Main.storyboard */; };
 		820F566A1C04309F00EBC7DE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 820F56691C04309F00EBC7DE /* Assets.xcassets */; };
 		820F566D1C04309F00EBC7DE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 820F566B1C04309F00EBC7DE /* LaunchScreen.storyboard */; };
 		820F56781C04309F00EBC7DE /* ZokomaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820F56771C04309F00EBC7DE /* ZokomaTests.swift */; };
 		820F56831C04309F00EBC7DE /* ZokomaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820F56821C04309F00EBC7DE /* ZokomaUITests.swift */; };
+		820F56911C04484700EBC7DE /* RestaurantTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820F56901C04484700EBC7DE /* RestaurantTableViewController.swift */; };
+		820F56931C04575B00EBC7DE /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820F56921C04575B00EBC7DE /* CustomTableViewCell.swift */; };
+		821B97AC1C0CA16700533591 /* ReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 821B97AB1C0CA16700533591 /* ReviewViewController.swift */; };
+		824C592A1C06CBAC00506CC3 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824C59291C06CBAC00506CC3 /* DetailViewController.swift */; };
+		824C592C1C06F36E00506CC3 /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824C592B1C06F36E00506CC3 /* Restaurant.swift */; };
+		824C59321C07653700506CC3 /* DetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824C59311C07653700506CC3 /* DetailTableViewCell.swift */; };
+		82520FF71C0F15D00022B38F /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82520FF61C0F15D00022B38F /* MapViewController.swift */; };
+		8257EE961C1AC649002E27A1 /* FeedMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8257EE951C1AC649002E27A1 /* FeedMapViewController.swift */; };
+		826FE0C31C1158E6005C8370 /* Zokoma.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 826FE0C11C1158E6005C8370 /* Zokoma.xcdatamodeld */; };
+		82841B131C194FF6004BA230 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82841B121C194FF6004BA230 /* CloudKit.framework */; };
+		82841B151C195A66004BA230 /* FeedTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82841B141C195A66004BA230 /* FeedTableViewController.swift */; };
+		82841B171C19873B004BA230 /* FeedDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82841B161C19873B004BA230 /* FeedDetailViewController.swift */; };
+		82B8839A1C170D32004CE95A /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B883991C170D32004CE95A /* AboutViewController.swift */; };
+		82B8839C1C170EC3004CE95A /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B8839B1C170EC3004CE95A /* WebViewController.swift */; };
+		82DEF3041C10433C00CBBC65 /* AddTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82DEF3031C10433C00CBBC65 /* AddTableViewController.swift */; };
+		82F0B6121C0DAC2A007B8134 /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F0B6111C0DAC2A007B8134 /* ShareViewController.swift */; };
+		82F0B6141C0DF7A3007B8134 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82F0B6131C0DF7A3007B8134 /* MapKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +52,6 @@
 /* Begin PBXFileReference section */
 		820F565F1C04309F00EBC7DE /* Zokoma.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Zokoma.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		820F56621C04309F00EBC7DE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		820F56641C04309F00EBC7DE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		820F56671C04309F00EBC7DE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		820F56691C04309F00EBC7DE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		820F566C1C04309F00EBC7DE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -47,6 +62,25 @@
 		820F567E1C04309F00EBC7DE /* ZokomaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZokomaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		820F56821C04309F00EBC7DE /* ZokomaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZokomaUITests.swift; sourceTree = "<group>"; };
 		820F56841C04309F00EBC7DE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		820F56901C04484700EBC7DE /* RestaurantTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantTableViewController.swift; sourceTree = "<group>"; };
+		820F56921C04575B00EBC7DE /* CustomTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
+		821B97AB1C0CA16700533591 /* ReviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewViewController.swift; sourceTree = "<group>"; };
+		824C59291C06CBAC00506CC3 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		824C592B1C06F36E00506CC3 /* Restaurant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
+		824C59311C07653700506CC3 /* DetailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailTableViewCell.swift; sourceTree = "<group>"; };
+		82520FF61C0F15D00022B38F /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		8257EE951C1AC649002E27A1 /* FeedMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedMapViewController.swift; sourceTree = "<group>"; };
+		826FE0C21C1158E6005C8370 /* Zokoma.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Zokoma.xcdatamodel; sourceTree = "<group>"; };
+		8274EA511C1FFC47007FF7BE /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		82841B111C193F17004BA230 /* Zokoma.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Zokoma.entitlements; sourceTree = "<group>"; };
+		82841B121C194FF6004BA230 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		82841B141C195A66004BA230 /* FeedTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedTableViewController.swift; sourceTree = "<group>"; };
+		82841B161C19873B004BA230 /* FeedDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedDetailViewController.swift; sourceTree = "<group>"; };
+		82B883991C170D32004CE95A /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
+		82B8839B1C170EC3004CE95A /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
+		82DEF3031C10433C00CBBC65 /* AddTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddTableViewController.swift; sourceTree = "<group>"; };
+		82F0B6111C0DAC2A007B8134 /* ShareViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
+		82F0B6131C0DF7A3007B8134 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +88,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				82F0B6141C0DF7A3007B8134 /* MapKit.framework in Frameworks */,
+				82841B131C194FF6004BA230 /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -77,6 +113,9 @@
 		820F56561C04309F00EBC7DE = {
 			isa = PBXGroup;
 			children = (
+				8274EA511C1FFC47007FF7BE /* README.md */,
+				82841B121C194FF6004BA230 /* CloudKit.framework */,
+				82F0B6131C0DF7A3007B8134 /* MapKit.framework */,
 				820F56611C04309F00EBC7DE /* Zokoma */,
 				820F56761C04309F00EBC7DE /* ZokomaTests */,
 				820F56811C04309F00EBC7DE /* ZokomaUITests */,
@@ -97,12 +136,27 @@
 		820F56611C04309F00EBC7DE /* Zokoma */ = {
 			isa = PBXGroup;
 			children = (
+				82841B111C193F17004BA230 /* Zokoma.entitlements */,
 				820F56621C04309F00EBC7DE /* AppDelegate.swift */,
-				820F56641C04309F00EBC7DE /* ViewController.swift */,
 				820F56661C04309F00EBC7DE /* Main.storyboard */,
 				820F56691C04309F00EBC7DE /* Assets.xcassets */,
 				820F566B1C04309F00EBC7DE /* LaunchScreen.storyboard */,
 				820F566E1C04309F00EBC7DE /* Info.plist */,
+				820F56901C04484700EBC7DE /* RestaurantTableViewController.swift */,
+				820F56921C04575B00EBC7DE /* CustomTableViewCell.swift */,
+				824C59291C06CBAC00506CC3 /* DetailViewController.swift */,
+				824C592B1C06F36E00506CC3 /* Restaurant.swift */,
+				824C59311C07653700506CC3 /* DetailTableViewCell.swift */,
+				821B97AB1C0CA16700533591 /* ReviewViewController.swift */,
+				82F0B6111C0DAC2A007B8134 /* ShareViewController.swift */,
+				82520FF61C0F15D00022B38F /* MapViewController.swift */,
+				82DEF3031C10433C00CBBC65 /* AddTableViewController.swift */,
+				826FE0C11C1158E6005C8370 /* Zokoma.xcdatamodeld */,
+				82B883991C170D32004CE95A /* AboutViewController.swift */,
+				82B8839B1C170EC3004CE95A /* WebViewController.swift */,
+				82841B141C195A66004BA230 /* FeedTableViewController.swift */,
+				82841B161C19873B004BA230 /* FeedDetailViewController.swift */,
+				8257EE951C1AC649002E27A1 /* FeedMapViewController.swift */,
 			);
 			path = Zokoma;
 			sourceTree = "<group>";
@@ -193,7 +247,15 @@
 				TargetAttributes = {
 					820F565E1C04309F00EBC7DE = {
 						CreatedOnToolsVersion = 7.1.1;
-						DevelopmentTeam = TC7WN99QX5;
+						DevelopmentTeam = 2DVC4H58RZ;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+							com.apple.iCloud = {
+								enabled = 1;
+							};
+						};
 					};
 					820F56721C04309F00EBC7DE = {
 						CreatedOnToolsVersion = 7.1.1;
@@ -259,8 +321,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				820F56651C04309F00EBC7DE /* ViewController.swift in Sources */,
+				824C59321C07653700506CC3 /* DetailTableViewCell.swift in Sources */,
+				824C592C1C06F36E00506CC3 /* Restaurant.swift in Sources */,
+				821B97AC1C0CA16700533591 /* ReviewViewController.swift in Sources */,
+				82841B151C195A66004BA230 /* FeedTableViewController.swift in Sources */,
+				82841B171C19873B004BA230 /* FeedDetailViewController.swift in Sources */,
+				820F56931C04575B00EBC7DE /* CustomTableViewCell.swift in Sources */,
+				82520FF71C0F15D00022B38F /* MapViewController.swift in Sources */,
+				8257EE961C1AC649002E27A1 /* FeedMapViewController.swift in Sources */,
+				820F56911C04484700EBC7DE /* RestaurantTableViewController.swift in Sources */,
+				82B8839A1C170D32004CE95A /* AboutViewController.swift in Sources */,
 				820F56631C04309F00EBC7DE /* AppDelegate.swift in Sources */,
+				82F0B6121C0DAC2A007B8134 /* ShareViewController.swift in Sources */,
+				824C592A1C06CBAC00506CC3 /* DetailViewController.swift in Sources */,
+				826FE0C31C1158E6005C8370 /* Zokoma.xcdatamodeld in Sources */,
+				82B8839C1C170EC3004CE95A /* WebViewController.swift in Sources */,
+				82DEF3041C10433C00CBBC65 /* AddTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -400,10 +476,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Zokoma/Zokoma.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Zokoma/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.jiro9611.Zokoma;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jiro9611.Zokoma.zokoma;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -411,10 +491,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Zokoma/Zokoma.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Zokoma/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.jiro9611.Zokoma;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jiro9611.Zokoma.zokoma;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
@@ -485,6 +569,7 @@
 				820F56891C04309F00EBC7DE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		820F568A1C04309F00EBC7DE /* Build configuration list for PBXNativeTarget "ZokomaTests" */ = {
 			isa = XCConfigurationList;
@@ -493,6 +578,7 @@
 				820F568C1C04309F00EBC7DE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		820F568D1C04309F00EBC7DE /* Build configuration list for PBXNativeTarget "ZokomaUITests" */ = {
 			isa = XCConfigurationList;
@@ -501,8 +587,22 @@
 				820F568F1C04309F00EBC7DE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		826FE0C11C1158E6005C8370 /* Zokoma.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				826FE0C21C1158E6005C8370 /* Zokoma.xcdatamodel */,
+			);
+			currentVersion = 826FE0C21C1158E6005C8370 /* Zokoma.xcdatamodel */;
+			path = Zokoma.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 820F56571C04309F00EBC7DE /* Project object */;
 }
