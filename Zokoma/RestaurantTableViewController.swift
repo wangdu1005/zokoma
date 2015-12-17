@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import Social
 
 class RestaurantTableViewController: UITableViewController, NSFetchedResultsControllerDelegate, UISearchResultsUpdating {
     
@@ -128,17 +129,56 @@ class RestaurantTableViewController: UITableViewController, NSFetchedResultsCont
     
     override func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [UITableViewRowAction] {
         
+//        let restaurant = (searchController.active) ? searchResults[indexPath.row] : restaurants[indexPath.row]
+        
         let shareAction = UITableViewRowAction(style: UITableViewRowActionStyle.Default ,title: "Share", handler: {(action:UITableViewRowAction!, indexPath:NSIndexPath!) -> Void in
             
             let shareMenu = UIAlertController(title: nil, message: "Share using", preferredStyle: .ActionSheet)
+            
             let twitterAction = UIAlertAction(title: "Twitter", style: UIAlertActionStyle.Default, handler: nil)
             let facebookAction = UIAlertAction(title: "Facebook", style: UIAlertActionStyle.Default, handler: nil)
-            let emailAction = UIAlertAction(title: "Email", style: UIAlertActionStyle.Default, handler: nil)
+
+            
+//            let twitterAction = UIAlertAction(title: "Twitter", style: UIAlertActionStyle.Default, handler: {(action) -> Void in
+//            
+//                if SLComposeViewController.isAvailableForServiceType(SLServiceTypeTwitter) {
+//                    let tweetComposer = SLComposeViewController(forServiceType: SLServiceTypeTwitter)
+//                    tweetComposer.setInitialText(restaurant.name)
+//                    tweetComposer.addImage(UIImage(data: restaurant.image)!)
+//                    self.presentViewController(tweetComposer, animated: true, completion: nil)
+//                } else {
+//                    let alertMessage = UIAlertController(title: " Twitter Unavailable", message: " You haven't registered your Twitter account. Please go to Setting > Twitter to create one.", preferredStyle: .Alert)
+//                    alertMessage.addAction(UIAlertAction(title: "Ok", style: .Default, handler: nil))
+//                    self.presentViewController(alertMessage, animated: true, completion: nil)
+//                }
+//                
+//            })
+            
+            
+            
+//            let facebookAction = UIAlertAction(title: "Facebook", style: UIAlertActionStyle.Default, handler: {(action) -> Void in
+//                
+//                if SLComposeViewController.isAvailableForServiceType(SLServiceTypeFacebook) {
+//                    let facebookComposer = SLComposeViewController(forServiceType: SLServiceTypeFacebook)
+//                    facebookComposer.setInitialText(restaurant.name)
+//                    facebookComposer.addImage(UIImage(data: restaurant.image)!)
+//                    facebookComposer.addURL(NSURL(string:"https://zokoma.wordpress.com"))
+//                    self.presentViewController(facebookComposer, animated: true, completion: nil)
+//                } else {
+//                    let alertMessage = UIAlertController(title: " Facebook Unavailable", message: " You haven't registered your Facebook account. Please go to Setting > Facebook to sign in or create one.", preferredStyle: .Alert)
+//                    alertMessage.addAction(UIAlertAction(title: "Ok", style: .Default, handler: nil))
+//                    self.presentViewController(alertMessage, animated: true, completion: nil)
+//                }
+//                
+//            })
+            
+            
+//            let emailAction = UIAlertAction(title: "Email", style: UIAlertActionStyle.Default, handler: nil)
             let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Default, handler: nil)
             
             shareMenu.addAction(twitterAction)
             shareMenu.addAction(facebookAction)
-            shareMenu.addAction(emailAction)
+//            shareMenu.addAction(emailAction)
             shareMenu.addAction(cancelAction)
             
             self.presentViewController(shareMenu, animated: true, completion: nil)
