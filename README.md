@@ -10,4 +10,5 @@ Please make sure your simulators are logined in your Apple ID account. Becasue t
 
 Social function (Facebook & Twitter Sharing) also need to login your account in the simulator device.
 
-
+## Copyright
+2016 JIRO9611 Zokoma
