@@ -143,6 +143,8 @@ class FeedTableViewController: UITableViewController {
             cell.imageView?.clipsToBounds = true
         
         } else {
+            
+            print("Get image from icloud")
         
             // get the image from icloud from background
             let publicDatabase = CKContainer.defaultContainer().publicCloudDatabase
@@ -157,7 +159,7 @@ class FeedTableViewController: UITableViewController {
                 } else {
                     if let restaurantRecord = record {
                         dispatch_async(dispatch_get_main_queue(), {
-                            
+                        
                             let imageAsset = restaurantRecord.objectForKey("image") as! CKAsset
                             
                             cell.imageView?.image = UIImage(data: NSData(contentsOfURL: imageAsset.fileURL)!)

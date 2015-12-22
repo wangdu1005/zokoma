@@ -23,7 +23,21 @@ class RestaurantTableViewController: UITableViewController, NSFetchedResultsCont
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationController?.hidesBarsOnSwipe = true
+        // Launch walkthrough tutorial screen
+        let defaults = NSUserDefaults.standardUserDefaults()
+        let hasViewedWalkthrough = defaults.boolForKey("hasViewedWalkthrough")
+        if hasViewedWalkthrough == false {
+            if let pageViewController = storyboard?.instantiateViewControllerWithIdentifier("PageViewController") as? PageViewController {
+                self.presentViewController(pageViewController, animated: true, completion: nil)
+            }
+        }
+        
+//        else {
+//            // Remove this code when development is over, otherwise the walkthrough will always appear!!!!! 20151222
+//            if let pageViewController = storyboard?.instantiateViewControllerWithIdentifier("PageViewController") as? PageViewController {
+//                self.presentViewController(pageViewController, animated: true, completion: nil)
+//            }
+//        }
         
         // Empty the back bar button title
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .Plain, target: nil, action: nil)
@@ -129,48 +143,48 @@ class RestaurantTableViewController: UITableViewController, NSFetchedResultsCont
     
     override func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [UITableViewRowAction] {
         
-//        let restaurant = (searchController.active) ? searchResults[indexPath.row] : restaurants[indexPath.row]
+        let restaurant = (searchController.active) ? searchResults[indexPath.row] : restaurants[indexPath.row]
         
         let shareAction = UITableViewRowAction(style: UITableViewRowActionStyle.Default ,title: "Share", handler: {(action:UITableViewRowAction!, indexPath:NSIndexPath!) -> Void in
             
             let shareMenu = UIAlertController(title: nil, message: "Share using", preferredStyle: .ActionSheet)
             
-            let twitterAction = UIAlertAction(title: "Twitter", style: UIAlertActionStyle.Default, handler: nil)
-            let facebookAction = UIAlertAction(title: "Facebook", style: UIAlertActionStyle.Default, handler: nil)
+//            let twitterAction = UIAlertAction(title: "Twitter", style: UIAlertActionStyle.Default, handler: nil)
+//            let facebookAction = UIAlertAction(title: "Facebook", style: UIAlertActionStyle.Default, handler: nil)
 
             
-//            let twitterAction = UIAlertAction(title: "Twitter", style: UIAlertActionStyle.Default, handler: {(action) -> Void in
-//            
-//                if SLComposeViewController.isAvailableForServiceType(SLServiceTypeTwitter) {
-//                    let tweetComposer = SLComposeViewController(forServiceType: SLServiceTypeTwitter)
-//                    tweetComposer.setInitialText(restaurant.name)
-//                    tweetComposer.addImage(UIImage(data: restaurant.image)!)
-//                    self.presentViewController(tweetComposer, animated: true, completion: nil)
-//                } else {
-//                    let alertMessage = UIAlertController(title: " Twitter Unavailable", message: " You haven't registered your Twitter account. Please go to Setting > Twitter to create one.", preferredStyle: .Alert)
-//                    alertMessage.addAction(UIAlertAction(title: "Ok", style: .Default, handler: nil))
-//                    self.presentViewController(alertMessage, animated: true, completion: nil)
-//                }
-//                
-//            })
+            let twitterAction = UIAlertAction(title: "Twitter", style: UIAlertActionStyle.Default, handler: {(action) -> Void in
+            
+                if SLComposeViewController.isAvailableForServiceType(SLServiceTypeTwitter) {
+                    let tweetComposer = SLComposeViewController(forServiceType: SLServiceTypeTwitter)
+                    tweetComposer.setInitialText(restaurant.name)
+                    tweetComposer.addImage(UIImage(data: restaurant.image)!)
+                    self.presentViewController(tweetComposer, animated: true, completion: nil)
+                } else {
+                    let alertMessage = UIAlertController(title: " Twitter Unavailable", message: " You haven't registered your Twitter account. Please go to Setting > Twitter to create one.", preferredStyle: .Alert)
+                    alertMessage.addAction(UIAlertAction(title: "Ok", style: .Default, handler: nil))
+                    self.presentViewController(alertMessage, animated: true, completion: nil)
+                }
+                
+            })
             
             
             
-//            let facebookAction = UIAlertAction(title: "Facebook", style: UIAlertActionStyle.Default, handler: {(action) -> Void in
-//                
-//                if SLComposeViewController.isAvailableForServiceType(SLServiceTypeFacebook) {
-//                    let facebookComposer = SLComposeViewController(forServiceType: SLServiceTypeFacebook)
-//                    facebookComposer.setInitialText(restaurant.name)
-//                    facebookComposer.addImage(UIImage(data: restaurant.image)!)
-//                    facebookComposer.addURL(NSURL(string:"https://zokoma.wordpress.com"))
-//                    self.presentViewController(facebookComposer, animated: true, completion: nil)
-//                } else {
-//                    let alertMessage = UIAlertController(title: " Facebook Unavailable", message: " You haven't registered your Facebook account. Please go to Setting > Facebook to sign in or create one.", preferredStyle: .Alert)
-//                    alertMessage.addAction(UIAlertAction(title: "Ok", style: .Default, handler: nil))
-//                    self.presentViewController(alertMessage, animated: true, completion: nil)
-//                }
-//                
-//            })
+            let facebookAction = UIAlertAction(title: "Facebook", style: UIAlertActionStyle.Default, handler: {(action) -> Void in
+                
+                if SLComposeViewController.isAvailableForServiceType(SLServiceTypeFacebook) {
+                    let facebookComposer = SLComposeViewController(forServiceType: SLServiceTypeFacebook)
+                    facebookComposer.setInitialText(restaurant.name)
+                    facebookComposer.addImage(UIImage(data: restaurant.image)!)
+                    facebookComposer.addURL(NSURL(string:"https://zokoma.wordpress.com"))
+                    self.presentViewController(facebookComposer, animated: true, completion: nil)
+                } else {
+                    let alertMessage = UIAlertController(title: " Facebook Unavailable", message: " You haven't registered your Facebook account. Please go to Setting > Facebook to sign in or create one.", preferredStyle: .Alert)
+                    alertMessage.addAction(UIAlertAction(title: "Ok", style: .Default, handler: nil))
+                    self.presentViewController(alertMessage, animated: true, completion: nil)
+                }
+                
+            })
             
             
 //            let emailAction = UIAlertAction(title: "Email", style: UIAlertActionStyle.Default, handler: nil)
@@ -263,6 +277,8 @@ class RestaurantTableViewController: UITableViewController, NSFetchedResultsCont
         filterContentForSearchText(searchText!)
         tableView.reloadData()
     }
+    
+    
     
     // MARK: - Navigation
     

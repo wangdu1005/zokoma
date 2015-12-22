@@ -15,6 +15,8 @@
 		820F56831C04309F00EBC7DE /* ZokomaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820F56821C04309F00EBC7DE /* ZokomaUITests.swift */; };
 		820F56911C04484700EBC7DE /* RestaurantTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820F56901C04484700EBC7DE /* RestaurantTableViewController.swift */; };
 		820F56931C04575B00EBC7DE /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820F56921C04575B00EBC7DE /* CustomTableViewCell.swift */; };
+		821331E81C291DF000DEB816 /* PageContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 821331E71C291DF000DEB816 /* PageContentViewController.swift */; };
+		821331EA1C29215900DEB816 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 821331E91C29215900DEB816 /* PageViewController.swift */; };
 		821B97AC1C0CA16700533591 /* ReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 821B97AB1C0CA16700533591 /* ReviewViewController.swift */; };
 		824C592A1C06CBAC00506CC3 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824C59291C06CBAC00506CC3 /* DetailViewController.swift */; };
 		824C592C1C06F36E00506CC3 /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824C592B1C06F36E00506CC3 /* Restaurant.swift */; };
@@ -64,6 +66,8 @@
 		820F56841C04309F00EBC7DE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		820F56901C04484700EBC7DE /* RestaurantTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantTableViewController.swift; sourceTree = "<group>"; };
 		820F56921C04575B00EBC7DE /* CustomTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
+		821331E71C291DF000DEB816 /* PageContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageContentViewController.swift; sourceTree = "<group>"; };
+		821331E91C29215900DEB816 /* PageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
 		821B97AB1C0CA16700533591 /* ReviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewViewController.swift; sourceTree = "<group>"; };
 		824C59291C06CBAC00506CC3 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		824C592B1C06F36E00506CC3 /* Restaurant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
@@ -157,6 +161,8 @@
 				82841B141C195A66004BA230 /* FeedTableViewController.swift */,
 				82841B161C19873B004BA230 /* FeedDetailViewController.swift */,
 				8257EE951C1AC649002E27A1 /* FeedMapViewController.swift */,
+				821331E71C291DF000DEB816 /* PageContentViewController.swift */,
+				821331E91C29215900DEB816 /* PageViewController.swift */,
 			);
 			path = Zokoma;
 			sourceTree = "<group>";
@@ -325,6 +331,7 @@
 				824C592C1C06F36E00506CC3 /* Restaurant.swift in Sources */,
 				821B97AC1C0CA16700533591 /* ReviewViewController.swift in Sources */,
 				82841B151C195A66004BA230 /* FeedTableViewController.swift in Sources */,
+				821331E81C291DF000DEB816 /* PageContentViewController.swift in Sources */,
 				82841B171C19873B004BA230 /* FeedDetailViewController.swift in Sources */,
 				820F56931C04575B00EBC7DE /* CustomTableViewCell.swift in Sources */,
 				82520FF71C0F15D00022B38F /* MapViewController.swift in Sources */,
@@ -335,6 +342,7 @@
 				82F0B6121C0DAC2A007B8134 /* ShareViewController.swift in Sources */,
 				824C592A1C06CBAC00506CC3 /* DetailViewController.swift in Sources */,
 				826FE0C31C1158E6005C8370 /* Zokoma.xcdatamodeld in Sources */,
+				821331EA1C29215900DEB816 /* PageViewController.swift in Sources */,
 				82B8839C1C170EC3004CE95A /* WebViewController.swift in Sources */,
 				82DEF3041C10433C00CBBC65 /* AddTableViewController.swift in Sources */,
 			);
