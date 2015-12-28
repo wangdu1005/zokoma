@@ -9,6 +9,8 @@
 import UIKit
 import CoreData
 import Social
+import Parse
+import Bolts
 
 class RestaurantTableViewController: UITableViewController, NSFetchedResultsControllerDelegate, UISearchResultsUpdating {
     
@@ -32,12 +34,12 @@ class RestaurantTableViewController: UITableViewController, NSFetchedResultsCont
             }
         }
         
-//        else {
-//            // Remove this code when development is over, otherwise the walkthrough will always appear!!!!! 20151222
-//            if let pageViewController = storyboard?.instantiateViewControllerWithIdentifier("PageViewController") as? PageViewController {
-//                self.presentViewController(pageViewController, animated: true, completion: nil)
-//            }
-//        }
+        else {
+            // Remove this code when development is over, otherwise the walkthrough will always appear!!!!! 20151222
+            if let pageViewController = storyboard?.instantiateViewControllerWithIdentifier("PageViewController") as? PageViewController {
+                self.presentViewController(pageViewController, animated: true, completion: nil)
+            }
+        }
         
         // Empty the back bar button title
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .Plain, target: nil, action: nil)

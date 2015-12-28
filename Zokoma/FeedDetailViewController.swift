@@ -8,16 +8,20 @@
 
 import UIKit
 import CloudKit
+import Parse
+import Bolts
 
 class FeedDetailViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet var restaurantImageView:UIImageView!
     @IBOutlet var tableView:UITableView!
 
-    var restaurant:CKRecord?
+//    var restaurant:CKRecord?
+    var restaurantParse:PFObject?
     
     // test array but it is empty.... no use
-    var restaurants:[CKRecord] = []
+//    var restaurants:[CKRecord] = []
+    var restaurantsParse:[PFObject] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,26 +30,68 @@ class FeedDetailViewController: UIViewController, UITableViewDataSource, UITable
         tableView.estimatedRowHeight = 36.0
         tableView.rowHeight = UITableViewAutomaticDimension;
         
-        // Fetch Image from Cloud in background
-        let publicDatabase = CKContainer.defaultContainer().publicCloudDatabase
-        let fetchRecordsImageOperation = CKFetchRecordsOperation(recordIDs: [restaurant!.recordID])
-        fetchRecordsImageOperation.desiredKeys = ["name", "image", "type", "location"]
-        fetchRecordsImageOperation.queuePriority = .VeryHigh
-        fetchRecordsImageOperation.perRecordCompletionBlock = {(record:CKRecord?, recordID:CKRecordID?, error:NSError?) -> Void in
-            if (error != nil) {
-                print("Failed to get restaurant image: \(error!.localizedDescription)")
-            } else {
-                if let restaurantRecord = record {
-                    dispatch_async(dispatch_get_main_queue(), {
-                        let imageAsset = restaurantRecord.objectForKey("image") as! CKAsset
-                        self.restaurantImageView.image = UIImage(data: NSData(contentsOfURL: imageAsset.fileURL)!)
-                        self.restaurant = restaurantRecord
-                        self.tableView.reloadData()
-                    })
+        // Fetch Image from Parse in backgorund
+        // Create a new PFQuery
+        let query:PFQuery =  PFQuery(className: "Restaurant")
+        query.whereKey("objectId", equalTo:(restaurantParse?.objectId)!)
+        
+        print("test restaurantParse?.objectId: \(restaurantParse?.objectId) Ya!!! ")
+        
+        query.findObjectsInBackgroundWithBlock {
+            (objects: [PFObject]?, error: NSError?) -> Void in
+            
+            if error == nil {
+                // The find succeeded.
+                print("Successfully retrieved \(objects![0].objectForKey("name")) scores.")
+                
+                if let restaurantObject = objects?[0]  {
+
+                    print(" print the object : \(restaurantObject)")
+                    
+                    // Get the image from restaurantObject
+                    let userImageFile = restaurantObject["image"] as? PFFile
+                    
+                    userImageFile!.getDataInBackgroundWithBlock {
+                        (imageData: NSData?, error: NSError?) -> Void in
+                        if error == nil {
+                            if let imageData = imageData {
+                                dispatch_async(dispatch_get_main_queue(), {
+                                    self.restaurantImageView.image = UIImage(data:imageData)
+                                })
+                            }
+                        }
+                    }
+                    
+                    self.restaurantParse = restaurantObject
+                    self.tableView.reloadData()
                 }
+                
+            } else {
+                // Log details of the failure
+                print("Error: \(error!) \(error!.userInfo)")
             }
         }
-        publicDatabase.addOperation(fetchRecordsImageOperation)
+        
+        // Fetch Image from Cloud in background
+//        let publicDatabase = CKContainer.defaultContainer().publicCloudDatabase
+//        let fetchRecordsImageOperation = CKFetchRecordsOperation(recordIDs: [restaurant!.recordID])
+//        fetchRecordsImageOperation.desiredKeys = ["name", "image", "type", "location"]
+//        fetchRecordsImageOperation.queuePriority = .VeryHigh
+//        fetchRecordsImageOperation.perRecordCompletionBlock = {(record:CKRecord?, recordID:CKRecordID?, error:NSError?) -> Void in
+//            if (error != nil) {
+//                print("Failed to get restaurant image: \(error!.localizedDescription)")
+//            } else {
+//                if let restaurantRecord = record {
+//                    dispatch_async(dispatch_get_main_queue(), {
+//                        let imageAsset = restaurantRecord.objectForKey("image") as! CKAsset
+//                        self.restaurantImageView.image = UIImage(data: NSData(contentsOfURL: imageAsset.fileURL)!)
+//                        self.restaurant = restaurantRecord
+//                        self.tableView.reloadData()
+//                    })
+//                }
+//            }
+//        }
+//        publicDatabase.addOperation(fetchRecordsImageOperation)
         
         // Set table view background color
         self.tableView.backgroundColor = UIColor(red: 240.0/255.0, green: 240.0/255.0, blue: 240.0/255.0, alpha: 0.2)
@@ -57,7 +103,7 @@ class FeedDetailViewController: UIViewController, UITableViewDataSource, UITable
         self.tableView.separatorColor = UIColor(red: 240.0/255.0, green: 240.0/255.0, blue: 240.0/255.0, alpha: 0.8)
         
         // Set navigation bar title
-        title = restaurant?.objectForKey("name") as? String
+        title = restaurantParse?.objectForKey("name") as? String
         
         
         tableView.estimatedRowHeight = 36.0;
@@ -92,13 +138,13 @@ class FeedDetailViewController: UIViewController, UITableViewDataSource, UITable
         switch indexPath.row {
         case 0:
             cell.fieldLabel.text = "Name"
-            cell.valueLabel.text = restaurant?.objectForKey("name") as? String
+            cell.valueLabel.text = restaurantParse?.objectForKey("name") as? String
         case 1:
             cell.fieldLabel.text = "Type"
-            cell.valueLabel.text = restaurant?.objectForKey("type") as? String
+            cell.valueLabel.text = restaurantParse?.objectForKey("type") as? String
         case 2:
             cell.fieldLabel.text = "Location"
-            cell.valueLabel.text = restaurant?.objectForKey("location") as? String
+            cell.valueLabel.text = restaurantParse?.objectForKey("location") as? String
             cell.mapButton.hidden = false
         default:
             cell.fieldLabel.text = ""
@@ -117,7 +163,7 @@ class FeedDetailViewController: UIViewController, UITableViewDataSource, UITable
         if segue.identifier == "showMap" {
             // Directly send the selected restaurant to the FeedMapView by Segue
             let destinationController = segue.destinationViewController as! FeedMapViewController
-            destinationController.restaurant = restaurant
+            destinationController.restaurantParse = restaurantParse
         }
     }
     

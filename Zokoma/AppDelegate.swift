@@ -8,6 +8,8 @@
 
 import UIKit
 import CoreData
+import Parse
+import Bolts
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -17,6 +19,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        
+        // [Optional] Power your app with Local Datastore. For more info, go to
+        // https://parse.com/docs/ios/guide#local-datastore
+        Parse.enableLocalDatastore()
+        
+        // Initialize Parse.
+        Parse.setApplicationId("GYLAJiDL5HiYULJo8qtgl4gLGzVlMgGZaqONxXEi",
+            clientKey: "UMPZZEFitMUflBg1WOlPQw3PVuQBnUKq4FzArGqy")
+        
+        // [Optional] Track statistics around application opens.
+        PFAnalytics.trackAppOpenedWithLaunchOptions(launchOptions)
         
         // Change the navifation background color
         UINavigationBar.appearance().barTintColor = UIColor(red: 216.0/255.0, green: 51.0/255.0, blue: 29.0/255.0, alpha: 1.0)
@@ -111,22 +124,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return coordinator
     }()
     
-//    lazy var managedObjectContext: NSManagedObjectContext = {
-//        // Returns the managed object context for the application (which is already bound to the persistent store coordinator for the application.) This property is optional since there are legitimate error conditions that could cause the creation of the context to fail.
-//        let coordinator = self.persistentStoreCoordinator
-//        var managedObjectContext = NSManagedObjectContext(concurrencyType: .MainQueueConcurrencyType)
-//        managedObjectContext.persistentStoreCoordinator = coordinator
-//        return managedObjectContext
-//    }()
     
     lazy var managedObjectContext: NSManagedObjectContext? = {
         // Returns the managed object context for the application (which is already bound to the persistent store coordinator for the application.) This property is optional since there are legitimate error conditions that could cause the creation of the context to fail.
         let coordinator = self.persistentStoreCoordinator
         var managedObjectContext = NSManagedObjectContext(concurrencyType: .MainQueueConcurrencyType)
-//        if coordinator == nil {
-//            return nil
-//        }
-//        var managedObjectContext = NSManagedObjectContext()
+
         managedObjectContext.persistentStoreCoordinator = coordinator
         return managedObjectContext
     }()

@@ -9,6 +9,8 @@
 import UIKit
 import CoreData
 import CloudKit
+import Parse
+import Bolts
 
 class AddTableViewController: UITableViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
@@ -87,7 +89,7 @@ class AddTableViewController: UITableViewController, UIImagePickerControllerDele
         }
         
         // If all fields are correctly filled in, extract the field value
-        // Create Restaurant Object and save to data store
+        // Create Restaurant Object and save to Local Core Data store
         if let managedObjectContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext {
             
             restaurant = NSEntityDescription.insertNewObjectForEntityForName("Restaurant",
@@ -111,7 +113,7 @@ class AddTableViewController: UITableViewController, UIImagePickerControllerDele
             
         }
         
-        // Save record to the cloud and share the restaurant with others
+        // Save record to the iCloud and share the restaurant with others (public DB)
         saveRecordToCloud(restaurant)
         
         //Excute the unwind segue and go back to the home screen
@@ -135,6 +137,7 @@ class AddTableViewController: UITableViewController, UIImagePickerControllerDele
     }
     
     func saveRecordToCloud(restaurant:Restaurant!) -> Void {
+        
         //prepare the record to save
         let record = CKRecord(recordType: "Restaurant")
         record.setValue(restaurant.name, forKey: "name")
@@ -143,6 +146,7 @@ class AddTableViewController: UITableViewController, UIImagePickerControllerDele
         
         //Resize the image
         let originalImage = UIImage(data: restaurant.image)
+//        let NSDataImage = NSData(data: restaurant.image)
         let scalingFactor = (originalImage!.size.width > 1024) ? 1024 / originalImage!.size.width : 1.0
         let scaledImage = UIImage(data: restaurant.image, scale: scalingFactor)
         // Write the image to local file for temporary use
@@ -160,14 +164,6 @@ class AddTableViewController: UITableViewController, UIImagePickerControllerDele
         let publicDatabase = CKContainer.defaultContainer().publicCloudDatabase
         
         // Save the record to iCloud
-//        publicDatabase.saveRecord(record, completionHandler: {(record:CKRecord?, error:NSError?) -> Void in
-//            // Remove temp file
-//            NSFileManager.defaultManager().removeItemAtPath(imageFilePath, error: NSError?)
-//            if (error != nil) {
-//                print("Failed to save record to the cloud:\(error!.description)")
-//            }
-//        })
-        
         publicDatabase.saveRecord(record, completionHandler: { (record:CKRecord?, error:NSError?) -> Void  in
             
             // Remove temp file
@@ -175,11 +171,84 @@ class AddTableViewController: UITableViewController, UIImagePickerControllerDele
             do {
                 try NSFileManager.defaultManager().removeItemAtPath(imageFilePath)
             } catch let error as NSError{
-                print("Failed to save record to the cloud: \(error.description)")
+                print("Failed to save record to the iCloud: \(error.description)")
             }
             
         })
+        
+        
+        // ==Parse==20151224==
+        // prepare the record to save to Parse cloud
+        // Create a PFObject
+        let newRestaurantObj:PFObject = PFObject(className: "Restaurant")
+        
+        
+        // Set the data key of the restaurant
+//        let testgetImageType = getImageType(NSDataImage)
+//        print("return the format of image \(testgetImageType)")
+    
+        let imageGet = UIImage(data: restaurant.image)
+        let imageData = UIImagePNGRepresentation(imageGet!)
+        let imageFile = PFFile(name:"image.png", data:imageData!)
+        
+        newRestaurantObj["image"] = imageFile
+        newRestaurantObj["name"] = restaurant.name
+        newRestaurantObj["type"] = restaurant.type
+        newRestaurantObj["location"] = restaurant.location
+        
+        // Save the PFObject
+        newRestaurantObj.saveInBackgroundWithBlock { (success:Bool, error:NSError?) -> Void in
+            
+            if(success == true) {
+                // Message has been saved!!!
+                // Retrieve the latest message and reload the table
+                //                self.retrieveMessages()
+                NSLog("Restaurant info saved to Parse successfully.")
+            } else {
+                // Something went wrong!!!
+                NSLog(error!.description)
+            }
+            
+            dispatch_async(dispatch_get_main_queue()) {
+                // Do any additional action here after save data to Parse
+            }
+        }
+        
     }
+    
+// MARK: - To do : getImageType
+//    func getImageType(imgData : NSData) -> String {
+//        
+//        var array = [UInt8](count: 1, repeatedValue: 0)
+//        
+//        imgData.getBytes(&array, length: 1)
+//        
+//        print(array)
+//        
+//        let ext : String
+//        
+//        switch (array[0]) {
+//        case 0xFF:
+//            
+//            ext = "jpg\(array[0])"
+//            
+//        case 0x89:
+//            
+//            ext = "png\(array[0])"
+//        case 0x47:
+//            
+//            ext = "gif\(array[0])"
+//        case 0x49, 0x4D :
+//            
+//            ext = "tiff\(array[0])"
+//        default:
+//            ext = "" //unknown
+//        }
+//        
+//        return ext
+//
+//    }
+    
     
     
     /*
@@ -191,9 +260,5 @@ class AddTableViewController: UITableViewController, UIImagePickerControllerDele
         // Pass the selected object to the new view controller.
     }
     */
-    
-//    func navigationController(navigationController: UINavigationController, willShowViewController viewController: UIViewController, animated: Bool) {
-//        UIApplication.sharedApplication().setStatusBarStyle(.LightContent, animated: false)
-//    }
 
 }

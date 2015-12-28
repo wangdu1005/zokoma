@@ -9,11 +9,14 @@
 import UIKit
 import MapKit
 import CloudKit
+import Parse
+import Bolts
 
 class FeedMapViewController: UIViewController, MKMapViewDelegate {
 
     @IBOutlet var mapView:MKMapView!
     var restaurant:CKRecord?
+    var restaurantParse:PFObject?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,7 +26,7 @@ class FeedMapViewController: UIViewController, MKMapViewDelegate {
         // Do any additional setup after loading the view.
         // Convert address to coordinate and annotate it on map
         let geoCoder = CLGeocoder()
-        let location = restaurant?.objectForKey("location") as? String
+        let location = restaurantParse?.objectForKey("location") as? String
         geoCoder.geocodeAddressString(location!,
             completionHandler: { placemarks,
                 error in
@@ -35,8 +38,8 @@ class FeedMapViewController: UIViewController, MKMapViewDelegate {
                     let placemark = placemarks![0] as CLPlacemark
                     // Add Annotation
                     let annotation = MKPointAnnotation()
-                    annotation.title = self.restaurant?.objectForKey("name") as? String
-                    annotation.subtitle = self.restaurant?.objectForKey("type") as? String
+                    annotation.title = self.restaurantParse?.objectForKey("name") as? String
+                    annotation.subtitle = self.restaurantParse?.objectForKey("type") as? String
                     annotation.coordinate = placemark.location!.coordinate
                     self.mapView.showAnnotations([annotation], animated: true)
                     self.mapView.selectAnnotation(annotation, animated: true)
@@ -60,8 +63,22 @@ class FeedMapViewController: UIViewController, MKMapViewDelegate {
         
         let leftIconView = UIImageView(frame: CGRectMake(0, 0, 53, 53))
         
-        let imageAsset = restaurant?.objectForKey("image") as! CKAsset
-        leftIconView.image = UIImage(data: NSData(contentsOfURL: imageAsset.fileURL)!)
+//        let imageAsset = restaurant?.objectForKey("image") as! CKAsset
+        let imageAsset = restaurantParse?.objectForKey("image") as! PFFile
+        
+        imageAsset.getDataInBackgroundWithBlock {
+            (imageData: NSData?, error: NSError?) -> Void in
+            if error == nil {
+                if let imageData = imageData {
+                    dispatch_async(dispatch_get_main_queue(), {
+                        leftIconView.image = UIImage(data:imageData)
+                    })
+                }
+            }
+        }
+
+//        leftIconView.image = UIImage(data: NSData(contentsOfURL: imageAsset.fileURL)!)
+//        leftIconView.image = UIImage(data: NSData(contentsOfURL: imageURL)!)
         annotationView?.leftCalloutAccessoryView = leftIconView
         
         return annotationView
