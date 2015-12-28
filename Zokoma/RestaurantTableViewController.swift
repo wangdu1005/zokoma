@@ -134,11 +134,6 @@ class RestaurantTableViewController: UITableViewController, NSFetchedResultsCont
             self.restaurants.removeAtIndex(indexPath.row)
             
             self.tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-    //        Debug
-    //        print("Total item:\(self.restaurantNames.count)")
-    //        for name in restaurantNames {
-    //            print(name)
-    //        }
             
         }
     }
@@ -150,10 +145,6 @@ class RestaurantTableViewController: UITableViewController, NSFetchedResultsCont
         let shareAction = UITableViewRowAction(style: UITableViewRowActionStyle.Default ,title: "Share", handler: {(action:UITableViewRowAction!, indexPath:NSIndexPath!) -> Void in
             
             let shareMenu = UIAlertController(title: nil, message: "Share using", preferredStyle: .ActionSheet)
-            
-//            let twitterAction = UIAlertAction(title: "Twitter", style: UIAlertActionStyle.Default, handler: nil)
-//            let facebookAction = UIAlertAction(title: "Facebook", style: UIAlertActionStyle.Default, handler: nil)
-
             
             let twitterAction = UIAlertAction(title: "Twitter", style: UIAlertActionStyle.Default, handler: {(action) -> Void in
             
@@ -169,8 +160,6 @@ class RestaurantTableViewController: UITableViewController, NSFetchedResultsCont
                 }
                 
             })
-            
-            
             
             let facebookAction = UIAlertAction(title: "Facebook", style: UIAlertActionStyle.Default, handler: {(action) -> Void in
                 
@@ -188,13 +177,10 @@ class RestaurantTableViewController: UITableViewController, NSFetchedResultsCont
                 
             })
             
-            
-//            let emailAction = UIAlertAction(title: "Email", style: UIAlertActionStyle.Default, handler: nil)
             let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Default, handler: nil)
             
             shareMenu.addAction(twitterAction)
             shareMenu.addAction(facebookAction)
-//            shareMenu.addAction(emailAction)
             shareMenu.addAction(cancelAction)
             
             self.presentViewController(shareMenu, animated: true, completion: nil)

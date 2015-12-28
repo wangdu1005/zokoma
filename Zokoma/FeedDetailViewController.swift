@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import CloudKit
 import Parse
 import Bolts
 
@@ -16,11 +15,8 @@ class FeedDetailViewController: UIViewController, UITableViewDataSource, UITable
     @IBOutlet var restaurantImageView:UIImageView!
     @IBOutlet var tableView:UITableView!
 
-//    var restaurant:CKRecord?
     var restaurantParse:PFObject?
     
-    // test array but it is empty.... no use
-//    var restaurants:[CKRecord] = []
     var restaurantsParse:[PFObject] = []
     
     override func viewDidLoad() {
@@ -71,27 +67,6 @@ class FeedDetailViewController: UIViewController, UITableViewDataSource, UITable
                 print("Error: \(error!) \(error!.userInfo)")
             }
         }
-        
-        // Fetch Image from Cloud in background
-//        let publicDatabase = CKContainer.defaultContainer().publicCloudDatabase
-//        let fetchRecordsImageOperation = CKFetchRecordsOperation(recordIDs: [restaurant!.recordID])
-//        fetchRecordsImageOperation.desiredKeys = ["name", "image", "type", "location"]
-//        fetchRecordsImageOperation.queuePriority = .VeryHigh
-//        fetchRecordsImageOperation.perRecordCompletionBlock = {(record:CKRecord?, recordID:CKRecordID?, error:NSError?) -> Void in
-//            if (error != nil) {
-//                print("Failed to get restaurant image: \(error!.localizedDescription)")
-//            } else {
-//                if let restaurantRecord = record {
-//                    dispatch_async(dispatch_get_main_queue(), {
-//                        let imageAsset = restaurantRecord.objectForKey("image") as! CKAsset
-//                        self.restaurantImageView.image = UIImage(data: NSData(contentsOfURL: imageAsset.fileURL)!)
-//                        self.restaurant = restaurantRecord
-//                        self.tableView.reloadData()
-//                    })
-//                }
-//            }
-//        }
-//        publicDatabase.addOperation(fetchRecordsImageOperation)
         
         // Set table view background color
         self.tableView.backgroundColor = UIColor(red: 240.0/255.0, green: 240.0/255.0, blue: 240.0/255.0, alpha: 0.2)

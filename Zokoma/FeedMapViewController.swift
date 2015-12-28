@@ -8,14 +8,12 @@
 
 import UIKit
 import MapKit
-import CloudKit
 import Parse
 import Bolts
 
 class FeedMapViewController: UIViewController, MKMapViewDelegate {
 
     @IBOutlet var mapView:MKMapView!
-    var restaurant:CKRecord?
     var restaurantParse:PFObject?
     
     override func viewDidLoad() {
@@ -63,7 +61,6 @@ class FeedMapViewController: UIViewController, MKMapViewDelegate {
         
         let leftIconView = UIImageView(frame: CGRectMake(0, 0, 53, 53))
         
-//        let imageAsset = restaurant?.objectForKey("image") as! CKAsset
         let imageAsset = restaurantParse?.objectForKey("image") as! PFFile
         
         imageAsset.getDataInBackgroundWithBlock {
@@ -77,8 +74,6 @@ class FeedMapViewController: UIViewController, MKMapViewDelegate {
             }
         }
 
-//        leftIconView.image = UIImage(data: NSData(contentsOfURL: imageAsset.fileURL)!)
-//        leftIconView.image = UIImage(data: NSData(contentsOfURL: imageURL)!)
         annotationView?.leftCalloutAccessoryView = leftIconView
         
         return annotationView

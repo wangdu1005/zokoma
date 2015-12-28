@@ -7,13 +7,10 @@
 //
 
 import UIKit
-import CloudKit
 import Parse
 import Bolts
 
 class FeedTableViewController: UITableViewController {
-    
-    var restaurants:[CKRecord] = []
     
     var restaurantsParse:[PFObject] = []
 
@@ -42,9 +39,6 @@ class FeedTableViewController: UITableViewController {
         refreshControl?.backgroundColor = UIColor.whiteColor()
         refreshControl?.tintColor = UIColor.grayColor()
         refreshControl?.addTarget(self, action: "getRecordFromParse", forControlEvents: UIControlEvents.ValueChanged)
-
-        
-//        self.getRecordsFromCloud()
         
         self.getRecordFromParse()
     }
@@ -65,66 +59,9 @@ class FeedTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         
-        // iCloud
-//        return restaurants.count
-        
         // Parse 0 : excute the function
         return restaurantsParse.count
     }
-
-//    func getRecordsFromCloud() {
-//        
-//        // init empty restaurant array
-//        restaurants = []
-//        
-//        // Fetch data using Convenience API
-//        //cloudContainer
-//        _ = CKContainer.defaultContainer()
-//        let publicDatabase = CKContainer.defaultContainer().publicCloudDatabase
-//        
-//        // Prepare for search
-//        let predicate = NSPredicate(value: true)
-//        let query = CKQuery(recordType: "Restaurant", predicate: predicate)
-//        query.sortDescriptors = [NSSortDescriptor(key: "creationDate", ascending: false)]
-//        
-//        // use query to set up the search
-//        let queryOperation = CKQueryOperation(query: query)
-//        queryOperation.desiredKeys = ["name"]
-//        queryOperation.queuePriority = .VeryHigh
-//        queryOperation.resultsLimit = 50
-//        queryOperation.recordFetchedBlock = { (record:CKRecord!) -> Void in
-//            if let restaurantRecord = record {
-//                self.restaurants.append(restaurantRecord)
-//            }
-//        }
-//        
-//        queryOperation.queryCompletionBlock = {(cursor:CKQueryCursor?, error:NSError?) -> Void in
-//            
-//            // stop spinner when download is done
-//            if self.spinner.isAnimating() {
-//                dispatch_async(dispatch_get_main_queue(), {
-//                    self.spinner.stopAnimating()
-//                })
-//            }
-//            
-//            // hide the pull refresh
-//            self.refreshControl?.endRefreshing()
-//            
-//            if (error != nil) {
-//                print("Failed to get data from iCloud -\(error!.localizedDescription)")
-//            } else {
-//                print("Successfuly retrieve the data from iCloud")
-//                dispatch_async(dispatch_get_main_queue(), {
-//                    self.tableView.reloadData()
-//                })
-//            }
-//        
-//        }
-    
-//         //Excute the query
-//        publicDatabase.addOperation(queryOperation)
-//        
-//    }
     
     func getRecordFromParse() {
         
@@ -137,10 +74,6 @@ class FeedTableViewController: UITableViewController {
         
         // Call findObjectsInBackground
         query.findObjectsInBackgroundWithBlock { (objects:[PFObject]?, error:NSError?) -> Void in
-            
-            
-            // Loop through the objects array
-            
             
             // Retrieve the data value of each PFObject
             if error == nil {
@@ -179,10 +112,6 @@ class FeedTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as UITableViewCell!
         
         // when pull to refresh is activate, this will make sure the array is not out of index
-//        if restaurants.isEmpty {
-//            return cell
-//        }
-        
         // Parse 1 : prevent empty value
         if restaurantsParse.isEmpty {
             print(" restaurantsParse is empty ")
@@ -193,23 +122,11 @@ class FeedTableViewController: UITableViewController {
         let restaurantParse = restaurantsParse[indexPath.row]
         cell.textLabel?.text = restaurantParse["name"] as? String
         
-        // =======================================================
-
-        // Configure the cell...
-//        let restaurant = restaurants[indexPath.row]
-
-//        cell.textLabel?.text = restaurant.objectForKey("name") as? String
-        
         // set default image
         cell.imageView?.image = UIImage(named: "camera")
         
         cell.imageView?.layer.cornerRadius = (cell.imageView?.frame.size.width)! / 2
         cell.imageView?.clipsToBounds = true
-        
-//        print("record io \(restaurant.recordID)")
-        
-        // check if have cache of this image then use cache
-//        if let imageFileURL = imageCache.objectForKey(restaurant.recordID) as? NSURL {
         
         // Parse 3 : if has the cache
         if let imageFileURL = imageCache.objectForKey(restaurantParse.objectId!) as? NSURL {
@@ -238,34 +155,6 @@ class FeedTableViewController: UITableViewController {
                     }
                 }
             }
-            
-//            print("Get image from icloud")
-        
-            // get the image from icloud from background
-//            let publicDatabase = CKContainer.defaultContainer().publicCloudDatabase
-//            
-//            let fetchRecordsImageOperation = CKFetchRecordsOperation(recordIDs: [restaurant.recordID])
-//            
-//            fetchRecordsImageOperation.desiredKeys = ["image"]
-//            fetchRecordsImageOperation.queuePriority = .VeryHigh
-//            fetchRecordsImageOperation.perRecordCompletionBlock = {(record:CKRecord?, recordID:CKRecordID?, error:NSError?) -> Void in
-//                if (error != nil) {
-//                    print("Failed to get restaurant image: \(error?.localizedDescription)")
-//                } else {
-//                    if let restaurantRecord = record {
-//                        dispatch_async(dispatch_get_main_queue(), {
-//                        
-//                            let imageAsset = restaurantRecord.objectForKey("image") as! CKAsset
-//                            
-//                            cell.imageView?.image = UIImage(data: NSData(contentsOfURL: imageAsset.fileURL)!)
-//                            
-//                            cell.imageView?.layer.cornerRadius = (cell.imageView?.frame.size.width)! / 2
-//                            cell.imageView?.clipsToBounds = true
-//                        })
-//                    }
-//                }
-//            }
-//            publicDatabase.addOperation(fetchRecordsImageOperation)
         }
         return cell
     }
@@ -278,10 +167,6 @@ class FeedTableViewController: UITableViewController {
         if segue.identifier == "showDetail" {
             if let row = tableView.indexPathForSelectedRow?.row {
                 let destinationController = segue.destinationViewController as! FeedDetailViewController
-                // cloudkit way
-//                destinationController.restaurant = restaurants[row]
-                
-                // Parse way
                 destinationController.restaurantParse = restaurantsParse[row]
             }
         }
