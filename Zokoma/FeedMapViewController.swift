@@ -15,7 +15,7 @@ class FeedMapViewController: UIViewController, MKMapViewDelegate {
 
     @IBOutlet var mapView:MKMapView!
     var restaurantParse:PFObject?
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
