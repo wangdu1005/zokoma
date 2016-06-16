@@ -38,7 +38,7 @@ class FeedTableViewController: UITableViewController {
         refreshControl = UIRefreshControl()
         refreshControl?.backgroundColor = UIColor.whiteColor()
         refreshControl?.tintColor = UIColor.grayColor()
-        refreshControl?.addTarget(self, action: "getRecordFromParse", forControlEvents: UIControlEvents.ValueChanged)
+        refreshControl?.addTarget(self, action: #selector(FeedTableViewController.getRecordFromParse), forControlEvents: UIControlEvents.ValueChanged)
         
         self.getRecordFromParse()
     }
