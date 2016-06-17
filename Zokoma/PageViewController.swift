@@ -36,7 +36,7 @@ class PageViewController: UIPageViewController, UIPageViewControllerDataSource {
     
         var index = (viewController as! PageContentViewController).index
         
-        index++
+        index += 1
         
         return self.viewControllerAtIndex(index)
     
@@ -47,7 +47,7 @@ class PageViewController: UIPageViewController, UIPageViewControllerDataSource {
         
         var index = (viewController as! PageContentViewController).index
         
-        index--
+        index -= 1
         
         return self.viewControllerAtIndex(index)
     }
