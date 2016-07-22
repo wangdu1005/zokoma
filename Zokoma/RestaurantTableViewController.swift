@@ -9,8 +9,8 @@
 import UIKit
 import CoreData
 import Social
-import Parse
-import Bolts
+//import Parse
+//import Bolts
 
 class RestaurantTableViewController: UITableViewController, NSFetchedResultsControllerDelegate, UISearchResultsUpdating {
     

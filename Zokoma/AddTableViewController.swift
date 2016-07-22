@@ -9,8 +9,8 @@
 import UIKit
 import CoreData
 import CloudKit
-import Parse
-import Bolts
+//import Parse
+//import Bolts
 
 class AddTableViewController: UITableViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 

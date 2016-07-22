@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		44550B83597BAFB660CCA8FA /* libPods-ZokomaUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ED80D68E289712544393C636 /* libPods-ZokomaUITests.a */; settings = {ATTRIBUTES = (Required, ); }; };
 		820F56631C04309F00EBC7DE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820F56621C04309F00EBC7DE /* AppDelegate.swift */; };
 		820F56681C04309F00EBC7DE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 820F56661C04309F00EBC7DE /* Main.storyboard */; };
 		820F566A1C04309F00EBC7DE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 820F56691C04309F00EBC7DE /* Assets.xcassets */; };
@@ -17,27 +18,12 @@
 		820F56931C04575B00EBC7DE /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820F56921C04575B00EBC7DE /* CustomTableViewCell.swift */; };
 		821331E81C291DF000DEB816 /* PageContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 821331E71C291DF000DEB816 /* PageContentViewController.swift */; };
 		821331EA1C29215900DEB816 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 821331E91C29215900DEB816 /* PageViewController.swift */; };
-		821331F11C296AB000DEB816 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 821331EB1C296AAF00DEB816 /* Bolts.framework */; };
-		821331F21C296AB000DEB816 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 821331EC1C296AAF00DEB816 /* Parse.framework */; };
-		821331F31C296AB000DEB816 /* ParseFacebookUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 821331ED1C296AAF00DEB816 /* ParseFacebookUtils.framework */; };
-		821331F41C296AB000DEB816 /* ParseFacebookUtilsV4.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 821331EE1C296AAF00DEB816 /* ParseFacebookUtilsV4.framework */; };
-		821331F51C296AB000DEB816 /* ParseTwitterUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 821331EF1C296AAF00DEB816 /* ParseTwitterUtils.framework */; };
-		821331F61C296AB000DEB816 /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 821331F01C296AB000DEB816 /* ParseUI.framework */; };
-		821331F81C296B4200DEB816 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 821331F71C296B4200DEB816 /* AudioToolbox.framework */; };
-		821331FA1C296B5100DEB816 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 821331F91C296B5100DEB816 /* CFNetwork.framework */; };
-		821331FC1C296B5E00DEB816 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 821331FB1C296B5E00DEB816 /* CoreGraphics.framework */; };
-		821331FE1C296B6C00DEB816 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 821331FD1C296B6C00DEB816 /* CoreLocation.framework */; };
-		821332001C296B7800DEB816 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 821331FF1C296B7800DEB816 /* QuartzCore.framework */; };
-		821332021C296B8400DEB816 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 821332011C296B8400DEB816 /* Security.framework */; };
-		821332041C296B8E00DEB816 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 821332031C296B8E00DEB816 /* StoreKit.framework */; };
-		821332061C296B9600DEB816 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 821332051C296B9600DEB816 /* SystemConfiguration.framework */; };
-		821332081C296B9F00DEB816 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 821332071C296B9F00DEB816 /* libz.tbd */; };
-		8213320A1C296BA900DEB816 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 821332091C296BA900DEB816 /* libsqlite3.tbd */; };
 		821B97AC1C0CA16700533591 /* ReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 821B97AB1C0CA16700533591 /* ReviewViewController.swift */; };
 		824C592A1C06CBAC00506CC3 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824C59291C06CBAC00506CC3 /* DetailViewController.swift */; };
 		824C592C1C06F36E00506CC3 /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824C592B1C06F36E00506CC3 /* Restaurant.swift */; };
 		824C59321C07653700506CC3 /* DetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824C59311C07653700506CC3 /* DetailTableViewCell.swift */; };
 		82520FF71C0F15D00022B38F /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82520FF61C0F15D00022B38F /* MapViewController.swift */; };
+		825352161D3FD074005F4EB6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 825352151D3FD074005F4EB6 /* GoogleService-Info.plist */; };
 		8257EE961C1AC649002E27A1 /* FeedMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8257EE951C1AC649002E27A1 /* FeedMapViewController.swift */; };
 		826FE0C31C1158E6005C8370 /* Zokoma.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 826FE0C11C1158E6005C8370 /* Zokoma.xcdatamodeld */; };
 		82841B131C194FF6004BA230 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82841B121C194FF6004BA230 /* CloudKit.framework */; };
@@ -48,6 +34,8 @@
 		82DEF3041C10433C00CBBC65 /* AddTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82DEF3031C10433C00CBBC65 /* AddTableViewController.swift */; };
 		82F0B6121C0DAC2A007B8134 /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F0B6111C0DAC2A007B8134 /* ShareViewController.swift */; };
 		82F0B6141C0DF7A3007B8134 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82F0B6131C0DF7A3007B8134 /* MapKit.framework */; };
+		E8E82AEA130A5A185FFC46F2 /* libPods-ZokomaTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A30FAA5E45797997B7EF5477 /* libPods-ZokomaTests.a */; settings = {ATTRIBUTES = (Required, ); }; };
+		EF1A334B3A9066793DA7EA58 /* libPods-Zokoma.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 52AE02462FCCC8284CD3A143 /* libPods-Zokoma.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +56,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		01A58EDDAB0684D65EB24BD4 /* Pods-ZokomaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZokomaTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ZokomaTests/Pods-ZokomaTests.release.xcconfig"; sourceTree = "<group>"; };
+		0D0419C63AA3C9EDF71BC7CF /* Pods-ZokomaUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZokomaUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ZokomaUITests/Pods-ZokomaUITests.release.xcconfig"; sourceTree = "<group>"; };
+		33D75D8E38BA06EE7BBDA2A9 /* Pods-ZokomaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZokomaTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ZokomaTests/Pods-ZokomaTests.debug.xcconfig"; sourceTree = "<group>"; };
+		3E814555D30E11A0E777BAFC /* Pods-Zokoma.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Zokoma.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Zokoma/Pods-Zokoma.debug.xcconfig"; sourceTree = "<group>"; };
+		52AE02462FCCC8284CD3A143 /* libPods-Zokoma.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Zokoma.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		627604D9468A5BF0D5F5071B /* Pods-Zokoma.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Zokoma.release.xcconfig"; path = "Pods/Target Support Files/Pods-Zokoma/Pods-Zokoma.release.xcconfig"; sourceTree = "<group>"; };
 		820F565F1C04309F00EBC7DE /* Zokoma.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Zokoma.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		820F56621C04309F00EBC7DE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		820F56671C04309F00EBC7DE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -84,28 +78,13 @@
 		820F56921C04575B00EBC7DE /* CustomTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		821331E71C291DF000DEB816 /* PageContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageContentViewController.swift; sourceTree = "<group>"; };
 		821331E91C29215900DEB816 /* PageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
-		821331EB1C296AAF00DEB816 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
-		821331EC1C296AAF00DEB816 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
-		821331ED1C296AAF00DEB816 /* ParseFacebookUtils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseFacebookUtils.framework; sourceTree = "<group>"; };
-		821331EE1C296AAF00DEB816 /* ParseFacebookUtilsV4.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseFacebookUtilsV4.framework; sourceTree = "<group>"; };
-		821331EF1C296AAF00DEB816 /* ParseTwitterUtils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseTwitterUtils.framework; sourceTree = "<group>"; };
-		821331F01C296AB000DEB816 /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseUI.framework; sourceTree = "<group>"; };
-		821331F71C296B4200DEB816 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
-		821331F91C296B5100DEB816 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
-		821331FB1C296B5E00DEB816 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		821331FD1C296B6C00DEB816 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
-		821331FF1C296B7800DEB816 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		821332011C296B8400DEB816 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
-		821332031C296B8E00DEB816 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
-		821332051C296B9600DEB816 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		821332071C296B9F00DEB816 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
-		821332091C296BA900DEB816 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		8213320C1C296CDA00DEB816 /* Zokoma-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Zokoma-Bridging-Header.h"; sourceTree = "<group>"; };
 		821B97AB1C0CA16700533591 /* ReviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewViewController.swift; sourceTree = "<group>"; };
 		824C59291C06CBAC00506CC3 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		824C592B1C06F36E00506CC3 /* Restaurant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
 		824C59311C07653700506CC3 /* DetailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailTableViewCell.swift; sourceTree = "<group>"; };
 		82520FF61C0F15D00022B38F /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		825352151D3FD074005F4EB6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		8257EE951C1AC649002E27A1 /* FeedMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedMapViewController.swift; sourceTree = "<group>"; };
 		826FE0C21C1158E6005C8370 /* Zokoma.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Zokoma.xcdatamodel; sourceTree = "<group>"; };
 		8274EA511C1FFC47007FF7BE /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -118,6 +97,9 @@
 		82DEF3031C10433C00CBBC65 /* AddTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddTableViewController.swift; sourceTree = "<group>"; };
 		82F0B6111C0DAC2A007B8134 /* ShareViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
 		82F0B6131C0DF7A3007B8134 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		A30FAA5E45797997B7EF5477 /* libPods-ZokomaTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ZokomaTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CB7C4D433BDDBCE00A1FEF6C /* Pods-ZokomaUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZokomaUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ZokomaUITests/Pods-ZokomaUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		ED80D68E289712544393C636 /* libPods-ZokomaUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ZokomaUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,24 +107,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8213320A1C296BA900DEB816 /* libsqlite3.tbd in Frameworks */,
-				821332081C296B9F00DEB816 /* libz.tbd in Frameworks */,
-				821332061C296B9600DEB816 /* SystemConfiguration.framework in Frameworks */,
-				821332041C296B8E00DEB816 /* StoreKit.framework in Frameworks */,
-				821332021C296B8400DEB816 /* Security.framework in Frameworks */,
-				821332001C296B7800DEB816 /* QuartzCore.framework in Frameworks */,
-				821331FE1C296B6C00DEB816 /* CoreLocation.framework in Frameworks */,
-				821331FC1C296B5E00DEB816 /* CoreGraphics.framework in Frameworks */,
-				821331FA1C296B5100DEB816 /* CFNetwork.framework in Frameworks */,
-				821331F81C296B4200DEB816 /* AudioToolbox.framework in Frameworks */,
-				821331F11C296AB000DEB816 /* Bolts.framework in Frameworks */,
 				82F0B6141C0DF7A3007B8134 /* MapKit.framework in Frameworks */,
-				821331F41C296AB000DEB816 /* ParseFacebookUtilsV4.framework in Frameworks */,
-				821331F51C296AB000DEB816 /* ParseTwitterUtils.framework in Frameworks */,
-				821331F21C296AB000DEB816 /* Parse.framework in Frameworks */,
-				821331F31C296AB000DEB816 /* ParseFacebookUtils.framework in Frameworks */,
-				821331F61C296AB000DEB816 /* ParseUI.framework in Frameworks */,
 				82841B131C194FF6004BA230 /* CloudKit.framework in Frameworks */,
+				EF1A334B3A9066793DA7EA58 /* libPods-Zokoma.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -150,6 +117,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E8E82AEA130A5A185FFC46F2 /* libPods-ZokomaTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -157,6 +125,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				44550B83597BAFB660CCA8FA /* libPods-ZokomaUITests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -166,7 +135,6 @@
 		820F56561C04309F00EBC7DE = {
 			isa = PBXGroup;
 			children = (
-				8213320B1C296C2700DEB816 /* Frameworks */,
 				8274EA511C1FFC47007FF7BE /* README.md */,
 				82841B121C194FF6004BA230 /* CloudKit.framework */,
 				82F0B6131C0DF7A3007B8134 /* MapKit.framework */,
@@ -174,6 +142,8 @@
 				820F56761C04309F00EBC7DE /* ZokomaTests */,
 				820F56811C04309F00EBC7DE /* ZokomaUITests */,
 				820F56601C04309F00EBC7DE /* Products */,
+				9ECBA27A99790AF571CA24BE /* Pods */,
+				B8B44BCCE896427764AEA8D7 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -190,6 +160,7 @@
 		820F56611C04309F00EBC7DE /* Zokoma */ = {
 			isa = PBXGroup;
 			children = (
+				825352151D3FD074005F4EB6 /* GoogleService-Info.plist */,
 				82841B111C193F17004BA230 /* Zokoma.entitlements */,
 				820F56621C04309F00EBC7DE /* AppDelegate.swift */,
 				820F56661C04309F00EBC7DE /* Main.storyboard */,
@@ -236,25 +207,25 @@
 			path = ZokomaUITests;
 			sourceTree = "<group>";
 		};
-		8213320B1C296C2700DEB816 /* Frameworks */ = {
+		9ECBA27A99790AF571CA24BE /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				821332091C296BA900DEB816 /* libsqlite3.tbd */,
-				821332071C296B9F00DEB816 /* libz.tbd */,
-				821332051C296B9600DEB816 /* SystemConfiguration.framework */,
-				821332031C296B8E00DEB816 /* StoreKit.framework */,
-				821332011C296B8400DEB816 /* Security.framework */,
-				821331FF1C296B7800DEB816 /* QuartzCore.framework */,
-				821331FD1C296B6C00DEB816 /* CoreLocation.framework */,
-				821331FB1C296B5E00DEB816 /* CoreGraphics.framework */,
-				821331F91C296B5100DEB816 /* CFNetwork.framework */,
-				821331F71C296B4200DEB816 /* AudioToolbox.framework */,
-				821331EB1C296AAF00DEB816 /* Bolts.framework */,
-				821331EC1C296AAF00DEB816 /* Parse.framework */,
-				821331ED1C296AAF00DEB816 /* ParseFacebookUtils.framework */,
-				821331EE1C296AAF00DEB816 /* ParseFacebookUtilsV4.framework */,
-				821331EF1C296AAF00DEB816 /* ParseTwitterUtils.framework */,
-				821331F01C296AB000DEB816 /* ParseUI.framework */,
+				3E814555D30E11A0E777BAFC /* Pods-Zokoma.debug.xcconfig */,
+				627604D9468A5BF0D5F5071B /* Pods-Zokoma.release.xcconfig */,
+				33D75D8E38BA06EE7BBDA2A9 /* Pods-ZokomaTests.debug.xcconfig */,
+				01A58EDDAB0684D65EB24BD4 /* Pods-ZokomaTests.release.xcconfig */,
+				CB7C4D433BDDBCE00A1FEF6C /* Pods-ZokomaUITests.debug.xcconfig */,
+				0D0419C63AA3C9EDF71BC7CF /* Pods-ZokomaUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		B8B44BCCE896427764AEA8D7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				52AE02462FCCC8284CD3A143 /* libPods-Zokoma.a */,
+				A30FAA5E45797997B7EF5477 /* libPods-ZokomaTests.a */,
+				ED80D68E289712544393C636 /* libPods-ZokomaUITests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -266,9 +237,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 820F56871C04309F00EBC7DE /* Build configuration list for PBXNativeTarget "Zokoma" */;
 			buildPhases = (
+				67E97FEFC7290EA3BECD25A4 /* [CP] Check Pods Manifest.lock */,
 				820F565B1C04309F00EBC7DE /* Sources */,
 				820F565C1C04309F00EBC7DE /* Frameworks */,
 				820F565D1C04309F00EBC7DE /* Resources */,
+				BF93DFABAF5883637723631D /* [CP] Embed Pods Frameworks */,
+				6E615865DD6723982B01276A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -283,9 +257,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 820F568A1C04309F00EBC7DE /* Build configuration list for PBXNativeTarget "ZokomaTests" */;
 			buildPhases = (
+				5C6036A10D653E2FDF75DFC7 /* [CP] Check Pods Manifest.lock */,
 				820F566F1C04309F00EBC7DE /* Sources */,
 				820F56701C04309F00EBC7DE /* Frameworks */,
 				820F56711C04309F00EBC7DE /* Resources */,
+				F9300ACFA6BC4BBDE9A5AD8D /* [CP] Embed Pods Frameworks */,
+				32D73A99C555CCD7B3CB29AB /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -301,9 +278,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 820F568D1C04309F00EBC7DE /* Build configuration list for PBXNativeTarget "ZokomaUITests" */;
 			buildPhases = (
+				D9B0731A0724EDCEBB8B6E43 /* [CP] Check Pods Manifest.lock */,
 				820F567A1C04309F00EBC7DE /* Sources */,
 				820F567B1C04309F00EBC7DE /* Frameworks */,
 				820F567C1C04309F00EBC7DE /* Resources */,
+				EC043E0224C087A82D7772C8 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -322,7 +301,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0720;
-				LastUpgradeCheck = 0710;
+				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = jiro9611;
 				TargetAttributes = {
 					820F565E1C04309F00EBC7DE = {
@@ -375,6 +354,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				820F566D1C04309F00EBC7DE /* LaunchScreen.storyboard in Resources */,
+				825352161D3FD074005F4EB6 /* GoogleService-Info.plist in Resources */,
 				820F566A1C04309F00EBC7DE /* Assets.xcassets in Resources */,
 				820F56681C04309F00EBC7DE /* Main.storyboard in Resources */,
 			);
@@ -395,6 +375,129 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		32D73A99C555CCD7B3CB29AB /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ZokomaTests/Pods-ZokomaTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5C6036A10D653E2FDF75DFC7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		67E97FEFC7290EA3BECD25A4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		6E615865DD6723982B01276A /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Zokoma/Pods-Zokoma-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BF93DFABAF5883637723631D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Zokoma/Pods-Zokoma-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D9B0731A0724EDCEBB8B6E43 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		EC043E0224C087A82D7772C8 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ZokomaUITests/Pods-ZokomaUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F9300ACFA6BC4BBDE9A5AD8D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ZokomaTests/Pods-ZokomaTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		820F565B1C04309F00EBC7DE /* Sources */ = {
@@ -509,11 +612,12 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				VALID_ARCHS = armv7;
 			};
 			name = Debug;
 		};
@@ -547,60 +651,137 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
+				VALID_ARCHS = armv7;
 			};
 			name = Release;
 		};
 		820F56881C04309F00EBC7DE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3E814555D30E11A0E777BAFC /* Pods-Zokoma.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Zokoma/Zokoma.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = Zokoma/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-l\"c++\"",
+					"-l\"sqlite3\"",
+					"-l\"z\"",
+					"-framework",
+					"\"AdSupport\"",
+					"-framework",
+					"\"AddressBook\"",
+					"-framework",
+					"\"CoreGraphics\"",
+					"-framework",
+					"\"FirebaseAnalytics\"",
+					"-framework",
+					"\"FirebaseInstanceID\"",
+					"-framework",
+					"\"GoogleInterchangeUtilities\"",
+					"-framework",
+					"\"GoogleSymbolUtilities\"",
+					"-framework",
+					"\"GoogleUtilities\"",
+					"-framework",
+					"\"SafariServices\"",
+					"-framework",
+					"\"StoreKit\"",
+					"-framework",
+					"\"SystemConfiguration\"",
+					"$(inherited)",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.jiro9611.Zokoma.zokoma;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Zokoma/Zokoma-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				VALID_ARCHS = armv7;
 			};
 			name = Debug;
 		};
 		820F56891C04309F00EBC7DE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 627604D9468A5BF0D5F5071B /* Pods-Zokoma.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Zokoma/Zokoma.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = Zokoma/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-l\"c++\"",
+					"-l\"sqlite3\"",
+					"-l\"z\"",
+					"-framework",
+					"\"AdSupport\"",
+					"-framework",
+					"\"AddressBook\"",
+					"-framework",
+					"\"CoreGraphics\"",
+					"-framework",
+					"\"FirebaseAnalytics\"",
+					"-framework",
+					"\"FirebaseInstanceID\"",
+					"-framework",
+					"\"GoogleInterchangeUtilities\"",
+					"-framework",
+					"\"GoogleSymbolUtilities\"",
+					"-framework",
+					"\"GoogleUtilities\"",
+					"-framework",
+					"\"SafariServices\"",
+					"-framework",
+					"\"StoreKit\"",
+					"-framework",
+					"\"SystemConfiguration\"",
+					"$(inherited)",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.jiro9611.Zokoma.zokoma;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Zokoma/Zokoma-Bridging-Header.h";
+				VALID_ARCHS = armv7;
 			};
 			name = Release;
 		};
 		820F568B1C04309F00EBC7DE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 33D75D8E38BA06EE7BBDA2A9 /* Pods-ZokomaTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(PROJECT_DIR)",
+					"$(inherited)",
+				);
 				INFOPLIST_FILE = ZokomaTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jiro9611.ZokomaTests;
@@ -611,8 +792,13 @@
 		};
 		820F568C1C04309F00EBC7DE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 01A58EDDAB0684D65EB24BD4 /* Pods-ZokomaTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(PROJECT_DIR)",
+					"$(inherited)",
+				);
 				INFOPLIST_FILE = ZokomaTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jiro9611.ZokomaTests;
@@ -623,7 +809,12 @@
 		};
 		820F568E1C04309F00EBC7DE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CB7C4D433BDDBCE00A1FEF6C /* Pods-ZokomaUITests.debug.xcconfig */;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = ZokomaUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jiro9611.ZokomaUITests;
@@ -635,7 +826,12 @@
 		};
 		820F568F1C04309F00EBC7DE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0D0419C63AA3C9EDF71BC7CF /* Pods-ZokomaUITests.release.xcconfig */;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = ZokomaUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jiro9611.ZokomaUITests;

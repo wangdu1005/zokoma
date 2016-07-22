@@ -7,8 +7,8 @@
 //
 
 import UIKit
-import Parse
-import Bolts
+//import Parse
+//import Bolts
 
 class FeedDetailViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
