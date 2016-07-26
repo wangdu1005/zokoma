@@ -80,9 +80,11 @@ EOM
   esac
 }
 if [[ "$CONFIGURATION" == "Debug" ]]; then
+  install_resource "GoogleTagManager/Frameworks/GoogleTagManager.framework/Resources/TagManagerResources.bundle"
   install_resource "Parse/Parse/Resources/en.lproj"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
+  install_resource "GoogleTagManager/Frameworks/GoogleTagManager.framework/Resources/TagManagerResources.bundle"
   install_resource "Parse/Parse/Resources/en.lproj"
 fi
 

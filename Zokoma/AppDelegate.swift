@@ -23,6 +23,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Use Firebase library to configure APIs
         FIRApp.configure()
         
+        FIRAnalytics.logEventWithName(kFIREventSelectContent, parameters: [
+            kFIRParameterContentType:"cont",
+            kFIRParameterItemID:"1"
+            ])
+        
+        FIRAnalytics.logEventWithName("share_image", parameters: [
+            "image_name": "test_jiro_img",
+            "full_text": "please_success"
+            ])
+
         // [Optional] Power your app with Local Datastore. For more info, go to
         // https://parse.com/docs/ios/guide#local-datastore
         Parse.enableLocalDatastore()

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		44550B83597BAFB660CCA8FA /* libPods-ZokomaUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ED80D68E289712544393C636 /* libPods-ZokomaUITests.a */; settings = {ATTRIBUTES = (Required, ); }; };
+		8204ABC91D44A94C00B31E14 /* container in Resources */ = {isa = PBXBuildFile; fileRef = 8204ABC81D44A94C00B31E14 /* container */; };
 		820F56631C04309F00EBC7DE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820F56621C04309F00EBC7DE /* AppDelegate.swift */; };
 		820F56681C04309F00EBC7DE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 820F56661C04309F00EBC7DE /* Main.storyboard */; };
 		820F566A1C04309F00EBC7DE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 820F56691C04309F00EBC7DE /* Assets.xcassets */; };
@@ -62,6 +63,7 @@
 		3E814555D30E11A0E777BAFC /* Pods-Zokoma.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Zokoma.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Zokoma/Pods-Zokoma.debug.xcconfig"; sourceTree = "<group>"; };
 		52AE02462FCCC8284CD3A143 /* libPods-Zokoma.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Zokoma.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		627604D9468A5BF0D5F5071B /* Pods-Zokoma.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Zokoma.release.xcconfig"; path = "Pods/Target Support Files/Pods-Zokoma/Pods-Zokoma.release.xcconfig"; sourceTree = "<group>"; };
+		8204ABC81D44A94C00B31E14 /* container */ = {isa = PBXFileReference; lastKnownFileType = folder; path = container; sourceTree = "<group>"; };
 		820F565F1C04309F00EBC7DE /* Zokoma.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Zokoma.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		820F56621C04309F00EBC7DE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		820F56671C04309F00EBC7DE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -135,6 +137,7 @@
 		820F56561C04309F00EBC7DE = {
 			isa = PBXGroup;
 			children = (
+				8204ABC81D44A94C00B31E14 /* container */,
 				8274EA511C1FFC47007FF7BE /* README.md */,
 				82841B121C194FF6004BA230 /* CloudKit.framework */,
 				82F0B6131C0DF7A3007B8134 /* MapKit.framework */,
@@ -355,6 +358,7 @@
 			files = (
 				820F566D1C04309F00EBC7DE /* LaunchScreen.storyboard in Resources */,
 				825352161D3FD074005F4EB6 /* GoogleService-Info.plist in Resources */,
+				8204ABC91D44A94C00B31E14 /* container in Resources */,
 				820F566A1C04309F00EBC7DE /* Assets.xcassets in Resources */,
 				820F56681C04309F00EBC7DE /* Main.storyboard in Resources */,
 			);

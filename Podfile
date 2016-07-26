@@ -7,6 +7,7 @@ target 'Zokoma' do
     pod 'Firebase'
     pod 'ParseFacebookUtilsV4'
     pod 'Parse'
+    pod 'GoogleTagManager', '~> 5.0'
     post_install do |installer|
         `find Pods -regex 'Pods/Parse.*\\.h' -print0 | xargs -0 sed -i '' 's/\\(<\\)Parse\\/\\(.*\\)\\(>\\)/\\"\\2\\"/'`
     end

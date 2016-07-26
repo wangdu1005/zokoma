@@ -1,0 +1,17 @@
+framework module GoogleTagManager {
+
+  export *
+
+  umbrella header "GoogleTagManager.h"
+
+  header "TAGCustomFunction.h"
+
+  link framework "AdSupport"
+  link framework "CoreTelephony"
+  link framework "JavaScriptCore"
+  link framework "SystemConfiguration"
+  link framework "UIKit"
+
+  link "sqlite3"
+  link "z"
+}
