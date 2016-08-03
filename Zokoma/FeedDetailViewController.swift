@@ -7,8 +7,8 @@
 //
 
 import UIKit
-//import Parse
-//import Bolts
+import Parse
+import Bolts
 
 class FeedDetailViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
@@ -21,6 +21,13 @@ class FeedDetailViewController: UIViewController, UITableViewDataSource, UITable
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //Google Analytics Screen Track
+        let tracker = GAI.sharedInstance().defaultTracker
+        tracker.set(kGAIScreenName, value: "FeedDetailView")
+        
+        let builder = GAIDictionaryBuilder.createScreenView()
+        tracker.send(builder.build() as [NSObject : AnyObject])
         
         // Do any additional setup after loading the view.
         tableView.estimatedRowHeight = 36.0

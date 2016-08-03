@@ -8,18 +8,24 @@
 
 import UIKit
 import CoreData
-//import Parse
-//import Bolts
+import Parse
+import Bolts
 import Firebase
+import FirebaseAnalytics
+import FirebaseStorage
+import FirebaseDatabase
+import FirebaseInstanceID
+import GoogleTagManager
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        
+        // Firebase Analytics =========================================================
         // Use Firebase library to configure APIs
         FIRApp.configure()
         
@@ -33,6 +39,45 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             "full_text": "please_success"
             ])
 
+        FIRAnalytics.logEventWithName("share_cool", parameters: [
+            "image_name": "wowowowowowowo"
+            ])
+        
+        FIRAnalytics.logEventWithName("share_beauty", parameters: [
+            "people_say": "wowowlaaaaaa",
+            "full_text": "iam the king in the world"
+            ])
+        
+        FIRAnalytics.logEventWithName("TO_PROVE_IT_SUCCESS", parameters: [
+            "people_say": "wowowlaaaaaa",
+            "full_text": "iam the king in the world"
+            ])
+        
+        FIRAnalytics.logEventWithName("share_data_layer", parameters: [
+            "share_data_cool": 310,
+            "share_data_hot": 520
+            ])
+        
+        FIRAnalytics.logEventWithName("share_data_error", parameters: [
+            "share_data_error_test": 786
+            ])
+        
+        FIRAnalytics.setUserPropertyString("suicide_squad", forName: "favorite_movie")
+        
+        // Google Analytics =========================================================
+
+        // Configure tracker from GoogleService-Info.plist.
+        var configureError:NSError?
+        GGLContext.sharedInstance().configureWithError(&configureError)
+        assert(configureError == nil, "Error configuring Google services: \(configureError)")
+        
+        // Optional: configure GAI options.
+        let gai = GAI.sharedInstance()
+        gai.trackUncaughtExceptions = true  // report uncaught exceptions
+        gai.logger.logLevel = GAILogLevel.Verbose  // remove before app release
+
+        
+        // Parse =====================================================================
         // [Optional] Power your app with Local Datastore. For more info, go to
         // https://parse.com/docs/ios/guide#local-datastore
         Parse.enableLocalDatastore()

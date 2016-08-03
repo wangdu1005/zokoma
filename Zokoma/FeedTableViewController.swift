@@ -7,8 +7,8 @@
 //
 
 import UIKit
-//import Parse
-//import Bolts
+import Parse
+import Bolts
 
 class FeedTableViewController: UITableViewController {
     
@@ -41,6 +41,13 @@ class FeedTableViewController: UITableViewController {
         refreshControl?.addTarget(self, action: #selector(FeedTableViewController.getRecordFromParse), forControlEvents: UIControlEvents.ValueChanged)
         
         self.getRecordFromParse()
+        
+        //Google Analytics Screen Track
+        let tracker = GAI.sharedInstance().defaultTracker
+        tracker.set(kGAIScreenName, value: "FeedTableView")
+        
+        let builder = GAIDictionaryBuilder.createScreenView()
+        tracker.send(builder.build() as [NSObject : AnyObject])
     }
 
     override func didReceiveMemoryWarning() {

@@ -8,8 +8,8 @@
 
 import UIKit
 import MapKit
-//import Parse
-//import Bolts
+import Parse
+import Bolts
 
 class FeedMapViewController: UIViewController, MKMapViewDelegate {
 

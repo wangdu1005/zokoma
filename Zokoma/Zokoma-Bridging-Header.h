@@ -3,3 +3,4 @@
 //
 #import <Parse/Parse.h>
 #import <Bolts/Bolts.h>
+#import <Google/Analytics.h>

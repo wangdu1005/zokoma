@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		44550B83597BAFB660CCA8FA /* libPods-ZokomaUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ED80D68E289712544393C636 /* libPods-ZokomaUITests.a */; settings = {ATTRIBUTES = (Required, ); }; };
+		673D4934226F9C602275A90F /* Pods_Zokoma.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D97CBACA9563FCDAE6751D81 /* Pods_Zokoma.framework */; };
 		8204ABC91D44A94C00B31E14 /* container in Resources */ = {isa = PBXBuildFile; fileRef = 8204ABC81D44A94C00B31E14 /* container */; };
 		820F56631C04309F00EBC7DE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820F56621C04309F00EBC7DE /* AppDelegate.swift */; };
 		820F56681C04309F00EBC7DE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 820F56661C04309F00EBC7DE /* Main.storyboard */; };
@@ -35,8 +35,8 @@
 		82DEF3041C10433C00CBBC65 /* AddTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82DEF3031C10433C00CBBC65 /* AddTableViewController.swift */; };
 		82F0B6121C0DAC2A007B8134 /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F0B6111C0DAC2A007B8134 /* ShareViewController.swift */; };
 		82F0B6141C0DF7A3007B8134 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82F0B6131C0DF7A3007B8134 /* MapKit.framework */; };
-		E8E82AEA130A5A185FFC46F2 /* libPods-ZokomaTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A30FAA5E45797997B7EF5477 /* libPods-ZokomaTests.a */; settings = {ATTRIBUTES = (Required, ); }; };
-		EF1A334B3A9066793DA7EA58 /* libPods-Zokoma.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 52AE02462FCCC8284CD3A143 /* libPods-Zokoma.a */; };
+		B3263EDA0E4F0C21BB537239 /* Pods_ZokomaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62B5A287E9733139FD0952FA /* Pods_ZokomaUITests.framework */; };
+		B3CA7425690AA5BDDDCCF135 /* Pods_ZokomaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA65ABAE3611F9A7B8523EFC /* Pods_ZokomaTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,8 +61,8 @@
 		0D0419C63AA3C9EDF71BC7CF /* Pods-ZokomaUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZokomaUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ZokomaUITests/Pods-ZokomaUITests.release.xcconfig"; sourceTree = "<group>"; };
 		33D75D8E38BA06EE7BBDA2A9 /* Pods-ZokomaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZokomaTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ZokomaTests/Pods-ZokomaTests.debug.xcconfig"; sourceTree = "<group>"; };
 		3E814555D30E11A0E777BAFC /* Pods-Zokoma.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Zokoma.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Zokoma/Pods-Zokoma.debug.xcconfig"; sourceTree = "<group>"; };
-		52AE02462FCCC8284CD3A143 /* libPods-Zokoma.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Zokoma.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		627604D9468A5BF0D5F5071B /* Pods-Zokoma.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Zokoma.release.xcconfig"; path = "Pods/Target Support Files/Pods-Zokoma/Pods-Zokoma.release.xcconfig"; sourceTree = "<group>"; };
+		62B5A287E9733139FD0952FA /* Pods_ZokomaUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZokomaUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8204ABC81D44A94C00B31E14 /* container */ = {isa = PBXFileReference; lastKnownFileType = folder; path = container; sourceTree = "<group>"; };
 		820F565F1C04309F00EBC7DE /* Zokoma.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Zokoma.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		820F56621C04309F00EBC7DE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -99,9 +99,9 @@
 		82DEF3031C10433C00CBBC65 /* AddTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddTableViewController.swift; sourceTree = "<group>"; };
 		82F0B6111C0DAC2A007B8134 /* ShareViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
 		82F0B6131C0DF7A3007B8134 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
-		A30FAA5E45797997B7EF5477 /* libPods-ZokomaTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ZokomaTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AA65ABAE3611F9A7B8523EFC /* Pods_ZokomaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZokomaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB7C4D433BDDBCE00A1FEF6C /* Pods-ZokomaUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZokomaUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ZokomaUITests/Pods-ZokomaUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		ED80D68E289712544393C636 /* libPods-ZokomaUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ZokomaUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D97CBACA9563FCDAE6751D81 /* Pods_Zokoma.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Zokoma.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,7 +111,7 @@
 			files = (
 				82F0B6141C0DF7A3007B8134 /* MapKit.framework in Frameworks */,
 				82841B131C194FF6004BA230 /* CloudKit.framework in Frameworks */,
-				EF1A334B3A9066793DA7EA58 /* libPods-Zokoma.a in Frameworks */,
+				673D4934226F9C602275A90F /* Pods_Zokoma.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -119,7 +119,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E8E82AEA130A5A185FFC46F2 /* libPods-ZokomaTests.a in Frameworks */,
+				B3CA7425690AA5BDDDCCF135 /* Pods_ZokomaTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -127,7 +127,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				44550B83597BAFB660CCA8FA /* libPods-ZokomaUITests.a in Frameworks */,
+				B3263EDA0E4F0C21BB537239 /* Pods_ZokomaUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -226,9 +226,9 @@
 		B8B44BCCE896427764AEA8D7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				52AE02462FCCC8284CD3A143 /* libPods-Zokoma.a */,
-				A30FAA5E45797997B7EF5477 /* libPods-ZokomaTests.a */,
-				ED80D68E289712544393C636 /* libPods-ZokomaUITests.a */,
+				D97CBACA9563FCDAE6751D81 /* Pods_Zokoma.framework */,
+				AA65ABAE3611F9A7B8523EFC /* Pods_ZokomaTests.framework */,
+				62B5A287E9733139FD0952FA /* Pods_ZokomaUITests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
