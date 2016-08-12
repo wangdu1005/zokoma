@@ -648,6 +648,7 @@
                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="15"/>
                                 <state key="normal" title="Visit Our Website"/>
                                 <connections>
+                                    <action selector="visitWebSite:" destination="UGr-3B-p9g" eventType="touchUpInside" id="HuI-q4-VDg"/>
                                     <segue destination="C9I-8S-k8b" kind="push" id="TZh-wT-hAA"/>
                                 </connections>
                             </button>

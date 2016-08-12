@@ -8,11 +8,16 @@
 
 import UIKit
 import MessageUI
+import FirebaseAnalytics
 
 class AboutViewController: UIViewController, MFMailComposeViewControllerDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        FIRAnalytics.logEventWithName("view_item", parameters: [
+            "item_name": "aboutViewSuccess"
+            ])
 
         // Do any additional setup after loading the view.
     }
@@ -23,6 +28,14 @@ class AboutViewController: UIViewController, MFMailComposeViewControllerDelegate
     }
     
     @IBAction func sendEmail (sender: AnyObject) {
+        
+//        FIRAnalytics.logEventWithName("sendEmail", parameters: [
+////            "email": "wangdu1005@gmail.com"
+//            "content_type": "sedn_email_category",
+//            "item_id": "sendEmailAction"
+//            ])
+        
+        print("Contact US Button Clicked")
 //        if MFMailComposeViewController.canSendMail() {
 //            let composer = MFMailComposeViewController()
 //            composer.mailComposeDelegate = self
@@ -88,7 +101,41 @@ class AboutViewController: UIViewController, MFMailComposeViewControllerDelegate
         // Dismiss the Mail interface
         dismissViewControllerAnimated(true, completion: nil)
     }
+    
+    
 
+    @IBAction func visitWebSite(sender: AnyObject) {
+        print("visit website Button clicked")
+
+        // Original way by blog post
+        // After testing result, logEventWithName's name will show on the GA report in Event Action column
+        // item_id (Event Action) must be fill in log event, otherwise GA can't recongize it.
+        // And the content_type (Event Category) will show on the GA report in "Event Category" column.
+        // Strang part is I set two log event in the same time when button click, but event "select_content" show the event category, event "view_time_action" didn't...
+        // view_item_action's item_id become the event action column in GA report, but event select_content show "select_content" in event action column...
+        //
+        FIRAnalytics.logEventWithName("select_content", parameters: [
+            "item_name": "button_click_new1",
+            "content_type": "visitWebsite_category",
+            "item_id": "visitWebAction1_1"
+            ])
+        
+        FIRAnalytics.logEventWithName("view_item_action", parameters: [
+            "item_name": "button_click_new2",
+            "content_type": "visitWebsite_category",
+            "item_id": "visitWebAction2_2",
+//            "eventAction" : "visitWebSite",
+//            "event" : "superVisitWebsite"
+            ])
+        
+//        FIRAnalytics.logEventWithName("view_item", parameters: [
+//            "item_name": "button_click_new",
+//            "content_type": "visitWebsite_category",
+//            "item_id": "visitWebAction3_3",
+//            "eventAction" : "visitWebSite",
+//            "event" : "superVisitWebsite"
+//            ])
+    }
     
     /*
     // MARK: - Navigation

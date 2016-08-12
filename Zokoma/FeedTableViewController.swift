@@ -43,11 +43,11 @@ class FeedTableViewController: UITableViewController {
         self.getRecordFromParse()
         
         //Google Analytics Screen Track
-        let tracker = GAI.sharedInstance().defaultTracker
-        tracker.set(kGAIScreenName, value: "FeedTableView")
-        
-        let builder = GAIDictionaryBuilder.createScreenView()
-        tracker.send(builder.build() as [NSObject : AnyObject])
+//        let tracker = GAI.sharedInstance().defaultTracker
+//        tracker.set(kGAIScreenName, value: "FeedTableView")
+//        
+//        let builder = GAIDictionaryBuilder.createScreenView()
+//        tracker.send(builder.build() as [NSObject : AnyObject])
     }
 
     override func didReceiveMemoryWarning() {
