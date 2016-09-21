@@ -16,7 +16,7 @@ class AboutViewController: UIViewController, MFMailComposeViewControllerDelegate
         super.viewDidLoad()
         
         FIRAnalytics.logEventWithName("view_item", parameters: [
-            "item_name": "aboutViewSuccess"
+            "item_name": "AboutMeScreenView"
             ])
 
         // Do any additional setup after loading the view.
@@ -105,37 +105,32 @@ class AboutViewController: UIViewController, MFMailComposeViewControllerDelegate
     
 
     @IBAction func visitWebSite(sender: AnyObject) {
-        print("visit website Button clicked")
-
-        // Original way by blog post
-        // After testing result, logEventWithName's name will show on the GA report in Event Action column
-        // item_id (Event Action) must be fill in log event, otherwise GA can't recongize it.
-        // And the content_type (Event Category) will show on the GA report in "Event Category" column.
-        // Strang part is I set two log event in the same time when button click, but event "select_content" show the event category, event "view_time_action" didn't...
-        // view_item_action's item_id become the event action column in GA report, but event select_content show "select_content" in event action column...
-        //
+        
         FIRAnalytics.logEventWithName("select_content", parameters: [
-            "item_name": "button_click_new1",
-            "content_type": "visitWebsite_category",
-            "item_id": "visitWebAction1_1"
+            "content_type": "Website",
+            "item_id": "visit_official_website"
             ])
-        
-        FIRAnalytics.logEventWithName("view_item_action", parameters: [
-            "item_name": "button_click_new2",
-            "content_type": "visitWebsite_category",
-            "item_id": "visitWebAction2_2",
-//            "eventAction" : "visitWebSite",
-//            "event" : "superVisitWebsite"
-            ])
-        
-//        FIRAnalytics.logEventWithName("view_item", parameters: [
-//            "item_name": "button_click_new",
-//            "content_type": "visitWebsite_category",
-//            "item_id": "visitWebAction3_3",
-//            "eventAction" : "visitWebSite",
-//            "event" : "superVisitWebsite"
-//            ])
+    
     }
+    
+    
+    
+    
+    
+    
+//    @IBAction func visitWebSite(sender: AnyObject) {
+//        
+//        let tracker = GAI.sharedInstance().defaultTracker
+//        let event = GAIDictionaryBuilder.createEventWithCategory(
+//            "Website",
+//            action: "visit_official_website",
+//            label: nil,
+//            value: nil).build()
+//        tracker.send(event as [NSObject : AnyObject])
+//        
+//    }
+    
+    
     
     /*
     // MARK: - Navigation
