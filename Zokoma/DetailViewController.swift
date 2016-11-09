@@ -23,11 +23,11 @@ class DetailViewController: UIViewController, UITableViewDataSource, UITableView
         super.viewDidLoad()
 
         // Show the image from RestaurantTableViewController
-        self.restaurantImageView.image = UIImage(data: restaurant.image)
+        self.restaurantImageView.image = UIImage(data: restaurant.image as Data)
         
         // Adjust the apperence of detail view controller
         self.tableView.backgroundColor = UIColor(red: 240.0/255.0, green: 240.0/255.0, blue: 240.0/255.0, alpha: 0.2)
-        self.tableView.tableFooterView = UIView(frame: CGRectZero)
+        self.tableView.tableFooterView = UIView(frame: CGRect.zero)
         self.tableView.separatorColor = UIColor(red: 240.0/255.0, green: 240.0/255.0, blue: 240.0/255.0, alpha: 0.8)
         
         // Show the restaurant name on nav bar title
@@ -38,7 +38,7 @@ class DetailViewController: UIViewController, UITableViewDataSource, UITableView
         self.toolBar.tintColor = UIColor(red: 216.0/255.0, green: 51.0/255.0, blue: 29.0/255.0, alpha: 1.0)
         
         // Background color
-        self.toolBar.barTintColor = UIColor.blackColor()
+        self.toolBar.barTintColor = UIColor.black
 
 
         
@@ -49,24 +49,24 @@ class DetailViewController: UIViewController, UITableViewDataSource, UITableView
     }
 
     // Setting hises bar on swipe to be false in order to remain the bar
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.hidesBarsOnSwipe = false
         self.navigationController?.setNavigationBarHidden(false, animated: true)
     }
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 4
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     
-        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! DetailTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! DetailTableViewCell
         
-        cell.backgroundColor = UIColor.clearColor()
+        cell.backgroundColor = UIColor.clear
         
         //Configure the cell
-        cell.mapButton.hidden = true
+        cell.mapButton.isHidden = true
         
         switch indexPath.row {
         
@@ -79,7 +79,7 @@ class DetailViewController: UIViewController, UITableViewDataSource, UITableView
         case 2:
             cell.fieldLabel.text = "Location"
             cell.valueLabel.text = restaurant.location
-            cell.mapButton.hidden = false
+            cell.mapButton.isHidden = false
         case 3:
             cell.fieldLabel.text = "Been here"
             cell.valueLabel.text = (restaurant.isVisited.boolValue) ? "Yes, I've been here before" : "No"
@@ -89,7 +89,7 @@ class DetailViewController: UIViewController, UITableViewDataSource, UITableView
         
         }
         
-        cell.backgroundColor = UIColor.clearColor()
+        cell.backgroundColor = UIColor.clear
         
         return cell
     
@@ -100,13 +100,13 @@ class DetailViewController: UIViewController, UITableViewDataSource, UITableView
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func close(segue:UIStoryboardSegue){
+    @IBAction func close(_ segue:UIStoryboardSegue){
         
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showMap" {
-            let destinationController = segue.destinationViewController as! MapViewController
+            let destinationController = segue.destination as! MapViewController
             destinationController.restaurant = restaurant
         }
     }

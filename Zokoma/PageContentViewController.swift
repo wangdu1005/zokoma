@@ -34,8 +34,8 @@ class PageContentViewController: UIViewController {
         pageControl.currentPage = index
         
         // get start button and forward button show hide
-        getStartedButton.hidden = (index == 2) ? false : true
-        forwardButton.hidden = (index == 2) ? true : false
+        getStartedButton.isHidden = (index == 2) ? false : true
+        forwardButton.isHidden = (index == 2) ? true : false
     }
 
     override func didReceiveMemoryWarning() {
@@ -45,14 +45,14 @@ class PageContentViewController: UIViewController {
     
 
     
-    @IBAction func close(sender: AnyObject) {
-        let defaults = NSUserDefaults.standardUserDefaults()
-        defaults.setBool(true, forKey: "hasViewedWalkthrough")
-        dismissViewControllerAnimated(true, completion: nil)
+    @IBAction func close(_ sender: AnyObject) {
+        let defaults = UserDefaults.standard
+        defaults.set(true, forKey: "hasViewedWalkthrough")
+        dismiss(animated: true, completion: nil)
     }
     
-    @IBAction func nextScreen(sender: AnyObject) {
-        let pageViewController = self.parentViewController as! PageViewController
+    @IBAction func nextScreen(_ sender: AnyObject) {
+        let pageViewController = self.parent as! PageViewController
         pageViewController.forward(index)
     }
     

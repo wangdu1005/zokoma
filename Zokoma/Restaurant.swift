@@ -14,7 +14,7 @@ class Restaurant:NSManagedObject {
     @NSManaged var name:String!
     @NSManaged var type:String!
     @NSManaged var location:String!
-    @NSManaged var image:NSData!
+    @NSManaged var image:Data!
     @NSManaged var isVisited:NSNumber!
 
 }

@@ -26,7 +26,7 @@ class MapViewController: UIViewController, MKMapViewDelegate {
             completionHandler: { placemarks,
                 error in
                 if error != nil {
-                    print(error)
+                    print(error as Any)
                     return
                 }
                 if placemarks != nil && placemarks!.count > 0 {
@@ -42,22 +42,22 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         })
     }
     
-    func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView? {
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
             let identifier = "MyPin"
         
-            if annotation.isKindOfClass(MKUserLocation) {
+            if annotation.isKind(of: MKUserLocation.self) {
                 return nil
             }
             
             // reuse the annotation
-            var annotationView = mapView.dequeueReusableAnnotationViewWithIdentifier(identifier)
+            var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier)
             if annotationView == nil {
                 annotationView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: identifier)
                 annotationView?.canShowCallout = true
             }
             
-            let leftIconView = UIImageView(frame: CGRectMake(0, 0, 53, 53))
-            leftIconView.image = UIImage(data: restaurant.image)
+            let leftIconView = UIImageView(frame: CGRect(x: 0, y: 0, width: 53, height: 53))
+            leftIconView.image = UIImage(data: restaurant.image as Data)
             annotationView?.leftCalloutAccessoryView = leftIconView
             
             return annotationView

@@ -22,7 +22,7 @@ class PageViewController: UIPageViewController, UIPageViewControllerDataSource {
         
         // Create the first walkthrough screen
         if let startingViewController = self.viewControllerAtIndex(0) {
-            setViewControllers([startingViewController], direction: .Forward, animated: true, completion: nil)
+            setViewControllers([startingViewController], direction: .forward, animated: true, completion: nil)
         }
     }
 
@@ -32,7 +32,7 @@ class PageViewController: UIPageViewController, UIPageViewControllerDataSource {
     }
     
 
-    func pageViewController(pageViewController: UIPageViewController, viewControllerAfterViewController viewController: UIViewController) -> UIViewController? {
+    func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
     
         var index = (viewController as! PageContentViewController).index
         
@@ -43,7 +43,7 @@ class PageViewController: UIPageViewController, UIPageViewControllerDataSource {
     }
     
     
-    func pageViewController(pageViewController: UIPageViewController, viewControllerBeforeViewController viewController: UIViewController) -> UIViewController? {
+    func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
         
         var index = (viewController as! PageContentViewController).index
         
@@ -52,14 +52,14 @@ class PageViewController: UIPageViewController, UIPageViewControllerDataSource {
         return self.viewControllerAtIndex(index)
     }
     
-    func viewControllerAtIndex(index:Int) -> PageContentViewController? {
+    func viewControllerAtIndex(_ index:Int) -> PageContentViewController? {
     
         if index == NSNotFound || index < 0 || index >= self.pageHeading.count {
             return nil
         }
         
         // Build up new view controller and pass the proper data
-        if let PageContentViewController = storyboard?.instantiateViewControllerWithIdentifier("PageContentViewController") as? PageContentViewController {
+        if let PageContentViewController = storyboard?.instantiateViewController(withIdentifier: "PageContentViewController") as? PageContentViewController {
                 PageContentViewController.imageFile = pageImages[index]
                 PageContentViewController.heading = pageHeading[index]
                 PageContentViewController.subHeading = pageSubHeading[index]
@@ -70,9 +70,9 @@ class PageViewController: UIPageViewController, UIPageViewControllerDataSource {
         
     }
     
-    func forward(index: Int) {
+    func forward(_ index: Int) {
         if let nextViewController = self.viewControllerAtIndex(index + 1) {
-            setViewControllers([nextViewController], direction: .Forward, animated: true, completion: nil)
+            setViewControllers([nextViewController], direction: .forward, animated: true, completion: nil)
         }
     }
     

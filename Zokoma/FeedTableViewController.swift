@@ -7,16 +7,16 @@
 //
 
 import UIKit
-import Parse
-import Bolts
+//import Parse
+//import Bolts
 
 class FeedTableViewController: UITableViewController {
     
-    var restaurantsParse:[PFObject] = []
+    var restaurantsParse:[String:String] = ["name":"hello world","image":"123.jpg"]
 
     var spinner:UIActivityIndicatorView = UIActivityIndicatorView()
 
-    var imageCache:NSCache = NSCache()
+    var imageCache = NSCache<AnyObject, AnyObject>()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,17 +28,17 @@ class FeedTableViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         
         // Configure the activity indicator and start animating
-        spinner.activityIndicatorViewStyle = .Gray
+        spinner.activityIndicatorViewStyle = .gray
         spinner.center = self.view.center
         spinner.hidesWhenStopped = true
-        self.parentViewController?.view.addSubview(spinner)
+        self.parent?.view.addSubview(spinner)
         spinner.startAnimating()
         
         // Pull To Refresh Control
         refreshControl = UIRefreshControl()
-        refreshControl?.backgroundColor = UIColor.whiteColor()
-        refreshControl?.tintColor = UIColor.grayColor()
-        refreshControl?.addTarget(self, action: #selector(FeedTableViewController.getRecordFromParse), forControlEvents: UIControlEvents.ValueChanged)
+        refreshControl?.backgroundColor = UIColor.white
+        refreshControl?.tintColor = UIColor.gray
+        refreshControl?.addTarget(self, action: #selector(FeedTableViewController.getRecordFromParse), for: UIControlEvents.valueChanged)
         
         self.getRecordFromParse()
         
@@ -58,12 +58,12 @@ class FeedTableViewController: UITableViewController {
 
     // MARK: - Table view data source
 
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         
         // Parse 0 : excute the function
@@ -73,87 +73,87 @@ class FeedTableViewController: UITableViewController {
     func getRecordFromParse() {
         
         // init empty restaurant array
-        restaurantsParse = []
+        restaurantsParse = [:]
         
-        // get the image from Parse from background
-        // Create a new PFQuery
-        let query:PFQuery =  PFQuery(className: "Restaurant")
-        
-        // Call findObjectsInBackground
-        query.findObjectsInBackgroundWithBlock { (objects:[PFObject]?, error:NSError?) -> Void in
-            
-            // Retrieve the data value of each PFObject
-            if error == nil {
-                for object in objects! {
-                    self.restaurantsParse.append(object)
-                }
-                
-                print("what is it in oject: \(self.restaurantsParse)")
-                
-                // stop spinner when download is done
-                if self.spinner.isAnimating() {
-                    dispatch_async(dispatch_get_main_queue(), {
-                        self.spinner.stopAnimating()
-                    })
-                }
-                
-                // hide the pull refresh
-                self.refreshControl?.endRefreshing()
-                
-                print("Successfuly retrieve the data from Parse!!")
-                dispatch_async(dispatch_get_main_queue(), {
-                    self.tableView.reloadData()
-                })
-                
-                self.tableView.reloadData()
-                
-            } else {
-                print("Failed to get data from Parse -\(error)")
-            }
-            
-        }
+//        // get the image from Parse from background
+//        // Create a new PFQuery
+//        let query:PFQuery =  PFQuery(className: "Restaurant")
+//        
+//        // Call findObjectsInBackground
+//        query.findObjectsInBackground { (objects:[PFObject]?, error:NSError?) -> Void in
+//            
+//            // Retrieve the data value of each PFObject
+//            if error == nil {
+//                for object in objects! {
+//                    self.restaurantsParse.append(object)
+//                }
+//                
+//                print("what is it in oject: \(self.restaurantsParse)")
+//                
+//                // stop spinner when download is done
+//                if self.spinner.isAnimating {
+//                    DispatchQueue.main.async(execute: {
+//                        self.spinner.stopAnimating()
+//                    })
+//                }
+//                
+//                // hide the pull refresh
+//                self.refreshControl?.endRefreshing()
+//                
+//                print("Successfuly retrieve the data from Parse!!")
+//                DispatchQueue.main.async(execute: {
+//                    self.tableView.reloadData()
+//                })
+//                
+//                self.tableView.reloadData()
+//                
+//            } else {
+//                print("Failed to get data from Parse -\(error)")
+//            }
+//            
+//        }
         
     }
 
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as UITableViewCell!
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as UITableViewCell!
         
         // when pull to refresh is activate, this will make sure the array is not out of index
         // Parse 1 : prevent empty value
         if restaurantsParse.isEmpty {
             print(" restaurantsParse is empty ")
-            return cell
+            return cell!
         }
         
         // Parse 2 : Configure the cell...
         let restaurantParse = restaurantsParse[indexPath.row]
-        cell.textLabel?.text = restaurantParse["name"] as? String
+        cell?.textLabel?.text = restaurantParse["name"] as? String
         
         // set default image
-        cell.imageView?.image = UIImage(named: "camera")
+        cell?.imageView?.image = UIImage(named: "camera")
         
-        cell.imageView?.layer.cornerRadius = (cell.imageView?.frame.size.width)! / 2
-        cell.imageView?.clipsToBounds = true
+        cell?.imageView?.layer.cornerRadius = (cell?.imageView?.frame.size.width)! / 2
+        cell?.imageView?.clipsToBounds = true
         
         // Parse 3 : if has the cache
-        if let imageFileURL = imageCache.objectForKey(restaurantParse.objectId!) as? NSURL {
+        if let imageFileURL = imageCache.object(forKey: restaurantParse.objectId!) as? URL {
             
             print("Get image from cache url \(imageFileURL)")
-            cell.imageView!.image = UIImage(data: NSData(contentsOfURL: imageFileURL)!)
+            cell.imageView!.image = UIImage(data: try! Data(contentsOf: imageFileURL))
             
-            cell.imageView?.layer.cornerRadius = (cell.imageView?.frame.size.width)! / 2
-            cell.imageView?.clipsToBounds = true
+            cell?.imageView?.layer.cornerRadius = (cell?.imageView?.frame.size.width)! / 2
+            cell?.imageView?.clipsToBounds = true
         
         } else {
             
             // Parse 4 : get the image from Parse from background
             let userImageFile = restaurantParse["image"] as? PFFile
             
-            userImageFile!.getDataInBackgroundWithBlock {
-                (imageData: NSData?, error: NSError?) -> Void in
+            userImageFile!.getDataInBackground {
+                (imageData: Data?, error: NSError?) -> Void in
                 if error == nil {
                     if let imageData = imageData {
-                        dispatch_async(dispatch_get_main_queue(), {
+                        DispatchQueue.main.async(execute: {
                             cell.imageView?.image = UIImage(data:imageData)
                             
                             cell.imageView?.layer.cornerRadius = (cell.imageView?.frame.size.width)! / 2
@@ -163,17 +163,17 @@ class FeedTableViewController: UITableViewController {
                 }
             }
         }
-        return cell
+        return cell!
     }
     
     // MARK: - Navigation
     
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any!) {
         
         if segue.identifier == "showDetail" {
             if let row = tableView.indexPathForSelectedRow?.row {
-                let destinationController = segue.destinationViewController as! FeedDetailViewController
+                let destinationController = segue.destination as! FeedDetailViewController
                 destinationController.restaurantParse = restaurantsParse[row]
             }
         }
