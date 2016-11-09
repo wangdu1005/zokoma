@@ -26,7 +26,7 @@ class MapViewController: UIViewController, MKMapViewDelegate {
             completionHandler: { placemarks,
                 error in
                 if error != nil {
-                    print(error as Any)
+                    print(error)
                     return
                 }
                 if placemarks != nil && placemarks!.count > 0 {
