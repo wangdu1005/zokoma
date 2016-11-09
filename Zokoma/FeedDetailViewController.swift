@@ -40,8 +40,8 @@ class FeedDetailViewController: UIViewController, UITableViewDataSource, UITable
         
         print("test restaurantParse?.objectId: \(restaurantParse?.objectId) Ya!!! ")
         
-        query.findObjectsInBackground {
-            (objects: [PFObject]?, error: NSError?) -> Void in
+        query.findObjectsInBackground(block: {
+            (objects: [PFObject]?, error: Error?) -> Void in
             
             if error == nil {
                 // The find succeeded.
@@ -54,16 +54,17 @@ class FeedDetailViewController: UIViewController, UITableViewDataSource, UITable
                     // Get the image from restaurantObject
                     let userImageFile = restaurantObject["image"] as? PFFile
                     
-                    userImageFile!.getDataInBackground {
-                        (imageData: Data?, error: NSError?) -> Void in
-                        if error == nil {
-                            if let imageData = imageData {
-                                DispatchQueue.main.async(execute: {
-                                    self.restaurantImageView.image = UIImage(data:imageData)
-                                })
+                    userImageFile!.getDataInBackground(block: {
+                            (imageData: Data?, error: Error?) -> Void in
+                            if error == nil {
+                                if let imageData = imageData {
+                                    DispatchQueue.main.async(execute: {
+                                        self.restaurantImageView.image = UIImage(data:imageData)
+                                    })
+                                }
                             }
                         }
-                    }
+                    )
                     
                     self.restaurantParse = restaurantObject
                     self.tableView.reloadData()
@@ -71,9 +72,10 @@ class FeedDetailViewController: UIViewController, UITableViewDataSource, UITable
                 
             } else {
                 // Log details of the failure
-                print("Error: \(error!) \(error!.userInfo)")
+                print("Error: \(error!) ")
             }
-        }
+        })
+        
         
         // Set table view background color
         self.tableView.backgroundColor = UIColor(red: 240.0/255.0, green: 240.0/255.0, blue: 240.0/255.0, alpha: 0.2)

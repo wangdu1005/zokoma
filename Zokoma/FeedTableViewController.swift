@@ -7,8 +7,8 @@
 //
 
 import UIKit
-//import Parse
-//import Bolts
+import Parse
+import Bolts
 
 class FeedTableViewController: UITableViewController {
     
@@ -126,7 +126,7 @@ class FeedTableViewController: UITableViewController {
         }
         
         // Parse 2 : Configure the cell...
-        let restaurantParse = restaurantsParse[indexPath.row]
+        let restaurantParse : [String:AnyObject] = restaurantsParse[indexPath.row] as! [String:AnyObject]
         cell?.textLabel?.text = restaurantParse["name"] as? String
         
         // set default image

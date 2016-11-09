@@ -63,16 +63,29 @@ class FeedMapViewController: UIViewController, MKMapViewDelegate {
         
         let imageAsset = restaurantParse?.object(forKey: "image") as! PFFile
         
-        imageAsset.getDataInBackground {
-            (imageData: Data?, error: NSError?) -> Void in
-            if error == nil {
-                if let imageData = imageData {
-                    DispatchQueue.main.async(execute: {
-                        leftIconView.image = UIImage(data:imageData)
-                    })
+//        imageAsset.getDataInBackground {
+//            (imageData: NSData?, error: NSError?) -> Void in
+//            if error == nil {
+//                if let imageData = imageData {
+//                    DispatchQueue.main.async(execute: {
+//                        leftIconView.image = UIImage(data:imageData)
+//                    })
+//                }
+//            }
+//        }
+        
+        imageAsset.getDataInBackground(block:
+            {
+                (imageData: Data?, error: Error?) in
+                if error == nil {
+                    if let imageData = imageData {
+                        DispatchQueue.main.async(execute: {
+                            leftIconView.image = UIImage(data:imageData)
+                        })
+                    }
                 }
             }
-        }
+        )
 
         annotationView?.leftCalloutAccessoryView = leftIconView
         
