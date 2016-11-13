@@ -10,7 +10,7 @@ import UIKit
 import CoreData
 import CloudKit
 //import Parse
-import Bolts
+//import Bolts
 
 class AddTableViewController: UITableViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
@@ -28,11 +28,6 @@ class AddTableViewController: UITableViewController, UIImagePickerControllerDele
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
 
     override func didReceiveMemoryWarning() {
@@ -164,7 +159,7 @@ class AddTableViewController: UITableViewController, UIImagePickerControllerDele
         let publicDatabase = CKContainer.default().publicCloudDatabase
         
         // Save the record to iCloud
-        publicDatabase.save(record, completionHandler: { (record:CKRecord?, error:NSError?) -> Void  in
+        publicDatabase.save(record, completionHandler: { (record:CKRecord?, error:Error?) -> Void  in
             
             // Remove temp file
             // New error handling method in Swift 2.0
@@ -174,80 +169,7 @@ class AddTableViewController: UITableViewController, UIImagePickerControllerDele
                 print("Failed to save record to the iCloud: \(error.description)")
             }
             
-        } as! (CKRecord?, Error?) -> Void)
-        
-        
-//        // ==Parse==20151224==
-//        // prepare the record to save to Parse cloud
-//        // Create a PFObject
-//        let newRestaurantObj:PFObject = PFObject(className: "Restaurant")
-//        
-//        
-//        // Set the data key of the restaurant
-////        let testgetImageType = getImageType(NSDataImage)
-////        print("return the format of image \(testgetImageType)")
-//    
-//        let imageGet = UIImage(data: restaurant.image as Data)
-//        let imageData = UIImagePNGRepresentation(imageGet!)
-//        let imageFile = PFFile(name:"image.png", data:imageData!)
-//        
-//        newRestaurantObj["image"] = imageFile
-//        newRestaurantObj["name"] = restaurant.name
-//        newRestaurantObj["type"] = restaurant.type
-//        newRestaurantObj["location"] = restaurant.location
-//        
-//        // Save the PFObject
-//        newRestaurantObj.saveInBackground { (success:Bool, error:NSError?) -> Void in
-//            
-//            if(success == true) {
-//                // Message has been saved!!!
-//                // Retrieve the latest message and reload the table
-//                //                self.retrieveMessages()
-//                NSLog("Restaurant info saved to Parse successfully.")
-//            } else {
-//                // Something went wrong!!!
-//                NSLog(error!.description)
-//            }
-//            
-//            DispatchQueue.main.async {
-//                // Do any additional action here after save data to Parse
-//            }
-//        }
-//        
-//    }
-    
-// MARK: - To do : getImageType
-//    func getImageType(imgData : NSData) -> String {
-//        
-//        var array = [UInt8](count: 1, repeatedValue: 0)
-//        
-//        imgData.getBytes(&array, length: 1)
-//        
-//        print(array)
-//        
-//        let ext : String
-//        
-//        switch (array[0]) {
-//        case 0xFF:
-//            
-//            ext = "jpg\(array[0])"
-//            
-//        case 0x89:
-//            
-//            ext = "png\(array[0])"
-//        case 0x47:
-//            
-//            ext = "gif\(array[0])"
-//        case 0x49, 0x4D :
-//            
-//            ext = "tiff\(array[0])"
-//        default:
-//            ext = "" //unknown
-//        }
-//        
-//        return ext
-//
-//    }
+        } )
     }
     
     

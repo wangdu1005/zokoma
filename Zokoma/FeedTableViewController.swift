@@ -12,8 +12,8 @@ import Bolts
 
 class FeedTableViewController: UITableViewController {
     
-    var restaurantsParse:[String:String] = ["name":"hello world","image":"123.jpg"]
-
+    var restaurantsParse:[PFObject] = []
+    
     var spinner:UIActivityIndicatorView = UIActivityIndicatorView()
 
     var imageCache = NSCache<AnyObject, AnyObject>()
@@ -41,13 +41,7 @@ class FeedTableViewController: UITableViewController {
         refreshControl?.addTarget(self, action: #selector(FeedTableViewController.getRecordFromParse), for: UIControlEvents.valueChanged)
         
         self.getRecordFromParse()
-        
-        //Google Analytics Screen Track
-//        let tracker = GAI.sharedInstance().defaultTracker
-//        tracker.set(kGAIScreenName, value: "FeedTableView")
-//        
-//        let builder = GAIDictionaryBuilder.createScreenView()
-//        tracker.send(builder.build() as [NSObject : AnyObject])
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -73,45 +67,45 @@ class FeedTableViewController: UITableViewController {
     func getRecordFromParse() {
         
         // init empty restaurant array
-        restaurantsParse = [:]
+        restaurantsParse = []
         
-//        // get the image from Parse from background
-//        // Create a new PFQuery
-//        let query:PFQuery =  PFQuery(className: "Restaurant")
-//        
-//        // Call findObjectsInBackground
-//        query.findObjectsInBackground { (objects:[PFObject]?, error:NSError?) -> Void in
-//            
-//            // Retrieve the data value of each PFObject
-//            if error == nil {
-//                for object in objects! {
-//                    self.restaurantsParse.append(object)
-//                }
-//                
-//                print("what is it in oject: \(self.restaurantsParse)")
-//                
-//                // stop spinner when download is done
-//                if self.spinner.isAnimating {
-//                    DispatchQueue.main.async(execute: {
-//                        self.spinner.stopAnimating()
-//                    })
-//                }
-//                
-//                // hide the pull refresh
-//                self.refreshControl?.endRefreshing()
-//                
-//                print("Successfuly retrieve the data from Parse!!")
-//                DispatchQueue.main.async(execute: {
-//                    self.tableView.reloadData()
-//                })
-//                
-//                self.tableView.reloadData()
-//                
-//            } else {
-//                print("Failed to get data from Parse -\(error)")
-//            }
-//            
-//        }
+        // get the image from Parse from background
+        // Create a new PFQuery
+        let query:PFQuery =  PFQuery(className: "Restaurant")
+        
+        // Call findObjectsInBackground
+        query.findObjectsInBackground (block: { (objects:[PFObject]?, error:Error?) -> Void in
+            
+            // Retrieve the data value of each PFObject
+            if error == nil {
+                for object in objects! {
+                    self.restaurantsParse.append(object)
+                }
+                
+                print("what is it in oject: \(self.restaurantsParse)")
+                
+                // stop spinner when download is done
+                if self.spinner.isAnimating {
+                    DispatchQueue.main.async(execute: {
+                        self.spinner.stopAnimating()
+                    })
+                }
+                
+                // hide the pull refresh
+                self.refreshControl?.endRefreshing()
+                
+                print("Successfuly retrieve the data from Parse!!")
+                DispatchQueue.main.async(execute: {
+                    self.tableView.reloadData()
+                })
+                
+                self.tableView.reloadData()
+                
+            } else {
+                print("Failed to get data from Parse -\(error)")
+            }
+            
+        })
         
     }
 
@@ -120,13 +114,13 @@ class FeedTableViewController: UITableViewController {
         
         // when pull to refresh is activate, this will make sure the array is not out of index
         // Parse 1 : prevent empty value
-        if restaurantsParse.isEmpty {
+        if (restaurantsParse.isEmpty) {
             print(" restaurantsParse is empty ")
             return cell!
         }
         
         // Parse 2 : Configure the cell...
-        let restaurantParse : [String:AnyObject] = restaurantsParse[indexPath.row] as! [String:AnyObject]
+        let restaurantParse = restaurantsParse[indexPath.row]
         cell?.textLabel?.text = restaurantParse["name"] as? String
         
         // set default image
@@ -136,10 +130,10 @@ class FeedTableViewController: UITableViewController {
         cell?.imageView?.clipsToBounds = true
         
         // Parse 3 : if has the cache
-        if let imageFileURL = imageCache.object(forKey: restaurantParse.objectId!) as? URL {
+        if let imageFileURL = imageCache.object(forKey: restaurantParse.objectId! as AnyObject) as? URL {
             
             print("Get image from cache url \(imageFileURL)")
-            cell.imageView!.image = UIImage(data: try! Data(contentsOf: imageFileURL))
+            cell?.imageView!.image = UIImage(data: try! Data(contentsOf: imageFileURL))
             
             cell?.imageView?.layer.cornerRadius = (cell?.imageView?.frame.size.width)! / 2
             cell?.imageView?.clipsToBounds = true
@@ -149,19 +143,22 @@ class FeedTableViewController: UITableViewController {
             // Parse 4 : get the image from Parse from background
             let userImageFile = restaurantParse["image"] as? PFFile
             
-            userImageFile!.getDataInBackground {
-                (imageData: Data?, error: NSError?) -> Void in
+            userImageFile!.getDataInBackground( block: {
+                (imageData: Data?, error: Error?) -> Void in
                 if error == nil {
                     if let imageData = imageData {
                         DispatchQueue.main.async(execute: {
-                            cell.imageView?.image = UIImage(data:imageData)
+                            cell?.imageView?.image = UIImage(data:imageData)
                             
-                            cell.imageView?.layer.cornerRadius = (cell.imageView?.frame.size.width)! / 2
-                            cell.imageView?.clipsToBounds = true
+                            cell?.imageView?.layer.cornerRadius = (cell?.imageView?.frame.size.width)! / 2
+                            cell?.imageView?.clipsToBounds = true
                         })
                     }
                 }
-            }
+                
+                }
+                
+            )
         }
         return cell!
     }

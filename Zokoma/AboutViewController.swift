@@ -29,22 +29,13 @@ class AboutViewController: UIViewController, MFMailComposeViewControllerDelegate
     
     @IBAction func sendEmail (_ sender: AnyObject) {
         
-//        FIRAnalytics.logEventWithName("sendEmail", parameters: [
-////            "email": "wangdu1005@gmail.com"
-//            "content_type": "sedn_email_category",
-//            "item_id": "sendEmailAction"
-//            ])
+        FIRAnalytics.logEvent(withName: "sendEmail", parameters: [
+            "email": "wangdu1005@gmail.com" as NSObject,
+            "content_type": "sedn_email_category" as NSObject,
+            "item_id": "sendEmailAction" as NSObject
+            ])
         
         print("Contact US Button Clicked")
-//        if MFMailComposeViewController.canSendMail() {
-//            let composer = MFMailComposeViewController()
-//            composer.mailComposeDelegate = self
-//            composer.setToRecipients(["jiro.lin9611@gmail.com"])
-//            composer.navigationBar.tintColor = UIColor.whiteColor()
-//            presentViewController(composer, animated: true, completion: {
-//                UIApplication.sharedApplication().setStatusBarStyle(.LightContent, animated: false)
-//            })
-//        }
         
         if MFMailComposeViewController.canSendMail() {
             let composer = MFMailComposeViewController()
@@ -53,7 +44,6 @@ class AboutViewController: UIViewController, MFMailComposeViewControllerDelegate
             composer.setToRecipients(["zokoma.service@gmail.com"])
             composer.navigationBar.tintColor = UIColor.white
             
-            //            presentViewController(composer, animated: true, completion: nil)
             present(composer, animated: true, completion: {
                 
 //                UIApplication.sharedApplication().setStatusBarStyle(.LightContent, animated: false)
@@ -63,21 +53,6 @@ class AboutViewController: UIViewController, MFMailComposeViewControllerDelegate
             })
         }
     }
-    
-//    func mailComposeController(controller: MFMailComposeViewController, didFinishWithResult result: MFMailComposeResult, error: NSError?) {
-//        switch result.rawValue {
-//        
-//            case MFMailComposeResultCancelled.rawValue: print("Mail cancelled")
-//            case MFMailComposeResultSaved.rawValue: print("Mail saved")
-//            case MFMailComposeResultSent.rawValue: print("Mail sent")
-//            case MFMailComposeResultFailed.rawValue: print("Failed to send mail: \(error?.localizedDescription)")
-//            default:
-//                break
-//        }
-//        
-//        // Dismiss the mail interface
-//        dismissViewControllerAnimated(true, completion: nil)
-//    }
     
     func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
         
@@ -112,25 +87,6 @@ class AboutViewController: UIViewController, MFMailComposeViewControllerDelegate
             ])
     
     }
-    
-    
-    
-    
-    
-    
-//    @IBAction func visitWebSite(sender: AnyObject) {
-//        
-//        let tracker = GAI.sharedInstance().defaultTracker
-//        let event = GAIDictionaryBuilder.createEventWithCategory(
-//            "Website",
-//            action: "visit_official_website",
-//            label: nil,
-//            value: nil).build()
-//        tracker.send(event as [NSObject : AnyObject])
-//        
-//    }
-    
-    
     
     /*
     // MARK: - Navigation
