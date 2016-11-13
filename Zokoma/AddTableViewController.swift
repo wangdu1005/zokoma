@@ -9,6 +9,8 @@
 import UIKit
 import CoreData
 import CloudKit
+//import Parse
+//import Bolts
 
 class AddTableViewController: UITableViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
@@ -26,11 +28,6 @@ class AddTableViewController: UITableViewController, UIImagePickerControllerDele
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
 
     override func didReceiveMemoryWarning() {
@@ -40,26 +37,26 @@ class AddTableViewController: UITableViewController, UIImagePickerControllerDele
 
     // MARK: - Table view data source
 
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.row == 0 {
-            if UIImagePickerController.isSourceTypeAvailable(.PhotoLibrary) {
+            if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
                 let imagePicker = UIImagePickerController()
                 imagePicker.allowsEditing = false
                 imagePicker.delegate = self
-                imagePicker.sourceType = .PhotoLibrary
-                self.presentViewController(imagePicker, animated: true, completion: nil)
+                imagePicker.sourceType = .photoLibrary
+                self.present(imagePicker, animated: true, completion: nil)
             }
         }
-        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        tableView.deselectRow(at: indexPath, animated: true)
     }
     
-    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         
         imageView.image = info[UIImagePickerControllerOriginalImage] as? UIImage
-        imageView.contentMode = UIViewContentMode.ScaleAspectFill
+        imageView.contentMode = UIViewContentMode.scaleAspectFill
         imageView.clipsToBounds = true
         
-        dismissViewControllerAnimated(true, completion: nil)
+        dismiss(animated: true, completion: nil)
     }
 
     @IBAction func save() {
@@ -77,26 +74,26 @@ class AddTableViewController: UITableViewController, UIImagePickerControllerDele
         
         if errorField != "" {
             
-            let alertController = UIAlertController(title: "Oops", message: "We can't proceed as you forget to fill in the restaurant " + errorField + ". All fields are mandatory.", preferredStyle: .Alert)
-            let doneAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
+            let alertController = UIAlertController(title: "Oops", message: "We can't proceed as you forget to fill in the restaurant " + errorField + ". All fields are mandatory.", preferredStyle: .alert)
+            let doneAction = UIAlertAction(title: "OK", style: .default, handler: nil)
             alertController.addAction(doneAction)
             
-            self.presentViewController(alertController, animated: true, completion: nil)
+            self.present(alertController, animated: true, completion: nil)
             
             return
         }
         
         // If all fields are correctly filled in, extract the field value
-        // Create Restaurant Object and save to data store
-        if let managedObjectContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext {
+        // Create Restaurant Object and save to Local Core Data store
+        if let managedObjectContext = (UIApplication.shared.delegate as! AppDelegate).managedObjectContext {
             
-            restaurant = NSEntityDescription.insertNewObjectForEntityForName("Restaurant",
-                inManagedObjectContext: managedObjectContext) as! Restaurant
+            restaurant = NSEntityDescription.insertNewObject(forEntityName: "Restaurant",
+                into: managedObjectContext) as! Restaurant
             restaurant.name = nameTextField.text
             restaurant.type = typeTextField.text
             restaurant.location = locationTextField.text
             restaurant.image = UIImagePNGRepresentation(imageView.image!)
-            restaurant.isVisited = isVisited
+            restaurant.isVisited = isVisited as NSNumber!
             
             // The newest way to handle error situation
             do {
@@ -111,30 +108,31 @@ class AddTableViewController: UITableViewController, UIImagePickerControllerDele
             
         }
         
-        // Save record to the cloud and share the restaurant with others
+        // Save record to the iCloud and share the restaurant with others (public DB)
         saveRecordToCloud(restaurant)
         
         //Excute the unwind segue and go back to the home screen
-        performSegueWithIdentifier("unwindToHomeScreen", sender: self)
+        performSegue(withIdentifier: "unwindToHomeScreen", sender: self)
         
     }
     
-    @IBAction func updateIsVisited(sender: AnyObject) {
+    @IBAction func updateIsVisited(_ sender: AnyObject) {
         // yes button clicked
         let buttonClicked = sender as! UIButton
         if buttonClicked == yesButton {
             isVisited = true
             yesButton.backgroundColor = UIColor(red: 216.0/255.0, green: 51.0/255.0, blue: 29.0/255.0, alpha: 1.0)
-            noButton.backgroundColor = UIColor.grayColor()
+            noButton.backgroundColor = UIColor.gray
         } else if buttonClicked == noButton {
             isVisited = false
-            yesButton.backgroundColor = UIColor.grayColor()
+            yesButton.backgroundColor = UIColor.gray
             noButton.backgroundColor = UIColor(red: 216.0/255.0, green: 51.0/255.0, blue: 29.0/255.0, alpha: 1.0)
         }
         
     }
     
-    func saveRecordToCloud(restaurant:Restaurant!) -> Void {
+    func saveRecordToCloud(_ restaurant:Restaurant!) -> Void {
+        
         //prepare the record to save
         let record = CKRecord(recordType: "Restaurant")
         record.setValue(restaurant.name, forKey: "name")
@@ -142,43 +140,36 @@ class AddTableViewController: UITableViewController, UIImagePickerControllerDele
         record.setValue(restaurant.location, forKey: "location")
         
         //Resize the image
-        let originalImage = UIImage(data: restaurant.image)
+        let originalImage = UIImage(data: restaurant.image as Data)
+//        let NSDataImage = NSData(data: restaurant.image)
         let scalingFactor = (originalImage!.size.width > 1024) ? 1024 / originalImage!.size.width : 1.0
-        let scaledImage = UIImage(data: restaurant.image, scale: scalingFactor)
+        let scaledImage = UIImage(data: restaurant.image as Data, scale: scalingFactor)
         // Write the image to local file for temporary use
         let imageFilePath = NSTemporaryDirectory() + restaurant.name
-        UIImageJPEGRepresentation(scaledImage!, 0.8)!.writeToFile(imageFilePath, atomically: true)
+        try? UIImageJPEGRepresentation(scaledImage!, 0.8)!.write(to: URL(fileURLWithPath: imageFilePath), options: [.atomic])
         
         // Create image asset for upload
-        let imageFileURL = NSURL(fileURLWithPath: imageFilePath)
+        let imageFileURL = URL(fileURLWithPath: imageFilePath)
         let imageAsset = CKAsset(fileURL: imageFileURL)
         record.setValue(imageAsset, forKey: "image")
         
         // Get the public icloud database
         //cloudContainer
-        _ = CKContainer.defaultContainer()
-        let publicDatabase = CKContainer.defaultContainer().publicCloudDatabase
+        _ = CKContainer.default()
+        let publicDatabase = CKContainer.default().publicCloudDatabase
         
         // Save the record to iCloud
-//        publicDatabase.saveRecord(record, completionHandler: {(record:CKRecord?, error:NSError?) -> Void in
-//            // Remove temp file
-//            NSFileManager.defaultManager().removeItemAtPath(imageFilePath, error: NSError?)
-//            if (error != nil) {
-//                print("Failed to save record to the cloud:\(error!.description)")
-//            }
-//        })
-        
-        publicDatabase.saveRecord(record, completionHandler: { (record:CKRecord?, error:NSError?) -> Void  in
+        publicDatabase.save(record, completionHandler: { (record:CKRecord?, error:Error?) -> Void  in
             
             // Remove temp file
             // New error handling method in Swift 2.0
             do {
-                try NSFileManager.defaultManager().removeItemAtPath(imageFilePath)
+                try FileManager.default.removeItem(atPath: imageFilePath)
             } catch let error as NSError{
-                print("Failed to save record to the cloud: \(error.description)")
+                print("Failed to save record to the iCloud: \(error.description)")
             }
             
-        })
+        } )
     }
     
     
@@ -191,9 +182,4 @@ class AddTableViewController: UITableViewController, UIImagePickerControllerDele
         // Pass the selected object to the new view controller.
     }
     */
-    
-//    func navigationController(navigationController: UINavigationController, willShowViewController viewController: UIViewController, animated: Bool) {
-//        UIApplication.sharedApplication().setStatusBarStyle(.LightContent, animated: false)
-//    }
-
 }

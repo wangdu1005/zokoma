@@ -9,12 +9,14 @@
 import UIKit
 import CoreData
 import Social
+//import Parse
+//import Bolts
 
 class RestaurantTableViewController: UITableViewController, NSFetchedResultsControllerDelegate, UISearchResultsUpdating {
     
     var restaurants:[Restaurant] = []
     
-    var fetchResultController:NSFetchedResultsController!
+    var fetchResultController:NSFetchedResultsController<NSFetchRequestResult>!
     
     var searchController:UISearchController!
 
@@ -23,20 +25,34 @@ class RestaurantTableViewController: UITableViewController, NSFetchedResultsCont
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationController?.hidesBarsOnSwipe = true
+        // Launch walkthrough tutorial screen
+        let defaults = UserDefaults.standard
+        let hasViewedWalkthrough = defaults.bool(forKey: "hasViewedWalkthrough")
+        if hasViewedWalkthrough == false {
+            if let pageViewController = storyboard?.instantiateViewController(withIdentifier: "PageViewController") as? PageViewController {
+                self.present(pageViewController, animated: true, completion: nil)
+            }
+        }
+        
+        else {
+            // Remove this code when development is over, otherwise the walkthrough will always appear!!!!! 20151222
+            if let pageViewController = storyboard?.instantiateViewController(withIdentifier: "PageViewController") as? PageViewController {
+                self.present(pageViewController, animated: true, completion: nil)
+            }
+        }
         
         // Empty the back bar button title
-        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .Plain, target: nil, action: nil)
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         
         // Self sizing cells
         tableView.estimatedRowHeight = 36.0
         tableView.rowHeight = UITableViewAutomaticDimension;
         
         // Fetch the data from Coredata
-        let fetchRequest = NSFetchRequest(entityName: "Restaurant")
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Restaurant")
         let sortDescriptor = NSSortDescriptor(key: "name", ascending: true)
         fetchRequest.sortDescriptors = [sortDescriptor]
-        if let managedObjectContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext {
+        if let managedObjectContext = (UIApplication.shared.delegate as! AppDelegate).managedObjectContext {
         
             fetchResultController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: managedObjectContext, sectionNameKeyPath: nil, cacheName: nil)
             fetchResultController.delegate = self
@@ -54,7 +70,7 @@ class RestaurantTableViewController: UITableViewController, NSFetchedResultsCont
         // Search bar
         searchController = UISearchController(searchResultsController: nil)
         searchController.searchBar.sizeToFit()
-        searchController.searchBar.tintColor = UIColor.whiteColor()
+        searchController.searchBar.tintColor = UIColor.white
         tableView.tableHeaderView = searchController.searchBar
         definesPresentationContext = true
         
@@ -64,7 +80,7 @@ class RestaurantTableViewController: UITableViewController, NSFetchedResultsCont
     }
     
     // Setting hises bar on swipe to be true in order to hide the bar during scroll
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.hidesBarsOnSwipe = true
     }
@@ -76,27 +92,27 @@ class RestaurantTableViewController: UITableViewController, NSFetchedResultsCont
 
     // MARK: - Table view data source
 
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         //Return the number of rows in the section
-        if searchController.active {
+        if searchController.isActive {
             return searchResults.count
         } else {
             return self.restaurants.count
         }
     }
     
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cellIdentifier = "Cell"
-        let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! CustomTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! CustomTableViewCell
 
         // Configure the cell...
-        let restaurant = (searchController.active) ? searchResults[indexPath.row] : restaurants[indexPath.row]
+        let restaurant = (searchController.isActive) ? searchResults[indexPath.row] : restaurants[indexPath.row]
         cell.nameLabel?.text = restaurant.name
         cell.typeLabel?.text = restaurant.type
         cell.locationLabel?.text = restaurant.location
-        cell.thumbnailIamgeView?.image = UIImage(data: restaurant.image)
-        cell.favorIconImageView.hidden = !restaurant.isVisited.boolValue
+        cell.thumbnailIamgeView?.image = UIImage(data: restaurant.image as Data)
+        cell.favorIconImageView.isHidden = !restaurant.isVisited.boolValue
 
         // Circular image
         cell.thumbnailIamgeView?.layer.cornerRadius = cell.thumbnailIamgeView.frame.size.width / 2
@@ -107,92 +123,78 @@ class RestaurantTableViewController: UITableViewController, NSFetchedResultsCont
 
     
     // Hide the Status bar
-    override func prefersStatusBarHidden() -> Bool {
+    override var prefersStatusBarHidden : Bool {
         return true
     }
     
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
         
             // Delete the data
-            self.restaurants.removeAtIndex(indexPath.row)
+            self.restaurants.remove(at: indexPath.row)
             
-            self.tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-    //        Debug
-    //        print("Total item:\(self.restaurantNames.count)")
-    //        for name in restaurantNames {
-    //            print(name)
-    //        }
+            self.tableView.deleteRows(at: [indexPath], with: .fade)
             
         }
     }
     
-    override func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [UITableViewRowAction] {
+    override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction] {
         
-//        let restaurant = (searchController.active) ? searchResults[indexPath.row] : restaurants[indexPath.row]
+        let restaurant = (searchController.isActive) ? searchResults[indexPath.row] : restaurants[indexPath.row]
         
-        let shareAction = UITableViewRowAction(style: UITableViewRowActionStyle.Default ,title: "Share", handler: {(action:UITableViewRowAction!, indexPath:NSIndexPath!) -> Void in
+        let shareAction = UITableViewRowAction(style: UITableViewRowActionStyle.default ,title: "Share", handler: {(action:UITableViewRowAction!, indexPath:IndexPath!) -> Void in
             
-            let shareMenu = UIAlertController(title: nil, message: "Share using", preferredStyle: .ActionSheet)
+            let shareMenu = UIAlertController(title: nil, message: "Share using", preferredStyle: .actionSheet)
             
-            let twitterAction = UIAlertAction(title: "Twitter", style: UIAlertActionStyle.Default, handler: nil)
-            let facebookAction = UIAlertAction(title: "Facebook", style: UIAlertActionStyle.Default, handler: nil)
-
+            let twitterAction = UIAlertAction(title: "Twitter", style: UIAlertActionStyle.default, handler: {(action) -> Void in
             
-//            let twitterAction = UIAlertAction(title: "Twitter", style: UIAlertActionStyle.Default, handler: {(action) -> Void in
-//            
-//                if SLComposeViewController.isAvailableForServiceType(SLServiceTypeTwitter) {
-//                    let tweetComposer = SLComposeViewController(forServiceType: SLServiceTypeTwitter)
-//                    tweetComposer.setInitialText(restaurant.name)
-//                    tweetComposer.addImage(UIImage(data: restaurant.image)!)
-//                    self.presentViewController(tweetComposer, animated: true, completion: nil)
-//                } else {
-//                    let alertMessage = UIAlertController(title: " Twitter Unavailable", message: " You haven't registered your Twitter account. Please go to Setting > Twitter to create one.", preferredStyle: .Alert)
-//                    alertMessage.addAction(UIAlertAction(title: "Ok", style: .Default, handler: nil))
-//                    self.presentViewController(alertMessage, animated: true, completion: nil)
-//                }
-//                
-//            })
+                if SLComposeViewController.isAvailable(forServiceType: SLServiceTypeTwitter) {
+                    let tweetComposer = SLComposeViewController(forServiceType: SLServiceTypeTwitter)
+                    tweetComposer?.setInitialText(restaurant.name)
+                    tweetComposer?.add(UIImage(data: restaurant.image as Data)!)
+                    self.present(tweetComposer!, animated: true, completion: nil)
+                } else {
+                    let alertMessage = UIAlertController(title: " Twitter Unavailable", message: " You haven't registered your Twitter account. Please go to Setting > Twitter to create one.", preferredStyle: .alert)
+                    alertMessage.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+                    self.present(alertMessage, animated: true, completion: nil)
+                }
+                
+            })
             
+            let facebookAction = UIAlertAction(title: "Facebook", style: UIAlertActionStyle.default, handler: {(action) -> Void in
+                
+                if SLComposeViewController.isAvailable(forServiceType: SLServiceTypeFacebook) {
+                    let facebookComposer = SLComposeViewController(forServiceType: SLServiceTypeFacebook)
+                    facebookComposer?.setInitialText(restaurant.name)
+                    facebookComposer?.add(UIImage(data: restaurant.image as Data)!)
+                    facebookComposer?.add(URL(string:"https://zokoma.wordpress.com"))
+                    self.present(facebookComposer!, animated: true, completion: nil)
+                } else {
+                    let alertMessage = UIAlertController(title: " Facebook Unavailable", message: " You haven't registered your Facebook account. Please go to Setting > Facebook to sign in or create one.", preferredStyle: .alert)
+                    alertMessage.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+                    self.present(alertMessage, animated: true, completion: nil)
+                }
+                
+            })
             
-            
-//            let facebookAction = UIAlertAction(title: "Facebook", style: UIAlertActionStyle.Default, handler: {(action) -> Void in
-//                
-//                if SLComposeViewController.isAvailableForServiceType(SLServiceTypeFacebook) {
-//                    let facebookComposer = SLComposeViewController(forServiceType: SLServiceTypeFacebook)
-//                    facebookComposer.setInitialText(restaurant.name)
-//                    facebookComposer.addImage(UIImage(data: restaurant.image)!)
-//                    facebookComposer.addURL(NSURL(string:"https://zokoma.wordpress.com"))
-//                    self.presentViewController(facebookComposer, animated: true, completion: nil)
-//                } else {
-//                    let alertMessage = UIAlertController(title: " Facebook Unavailable", message: " You haven't registered your Facebook account. Please go to Setting > Facebook to sign in or create one.", preferredStyle: .Alert)
-//                    alertMessage.addAction(UIAlertAction(title: "Ok", style: .Default, handler: nil))
-//                    self.presentViewController(alertMessage, animated: true, completion: nil)
-//                }
-//                
-//            })
-            
-            
-//            let emailAction = UIAlertAction(title: "Email", style: UIAlertActionStyle.Default, handler: nil)
-            let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Default, handler: nil)
+            let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.default, handler: nil)
             
             shareMenu.addAction(twitterAction)
             shareMenu.addAction(facebookAction)
-//            shareMenu.addAction(emailAction)
             shareMenu.addAction(cancelAction)
             
-            self.presentViewController(shareMenu, animated: true, completion: nil)
+            self.present(shareMenu, animated: true, completion: nil)
             
             }
         )
         
         let deleteAction = UITableViewRowAction(
-            style: UITableViewRowActionStyle.Default, title: "Delete", handler: {(action:UITableViewRowAction!, indexPath:NSIndexPath!) -> Void in
+            style: UITableViewRowActionStyle.default, title: "Delete", handler: {(action:UITableViewRowAction!, indexPath:IndexPath!) -> Void in
                 
                 // Delete the row from the data source
-                if let managedObjectContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext {
-                    let restaurantToDelete = self.fetchResultController.objectAtIndexPath(indexPath) as! Restaurant
-                    managedObjectContext.deleteObject(restaurantToDelete)
+                if let managedObjectContext = (UIApplication.shared.delegate as! AppDelegate).managedObjectContext {
+                    let restaurantToDelete = self.fetchResultController.object(at: indexPath) as! Restaurant
+                    managedObjectContext.delete(restaurantToDelete)
                 
                     do {
                         try managedObjectContext.save()
@@ -212,75 +214,77 @@ class RestaurantTableViewController: UITableViewController, NSFetchedResultsCont
     }
     
     // When search bar were active then cell can not be edit
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-            if searchController.active {
+    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+            if searchController.isActive {
                 return false
             } else {
                 return true
             }
     }
     
-    func controllerWillChangeContent(controller: NSFetchedResultsController) {
+    func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
         tableView.beginUpdates()
     }
     
-    func controller(controller: NSFetchedResultsController,
-        didChangeObject anObject: AnyObject,
-        atIndexPath indexPath: NSIndexPath?,
-        forChangeType type: NSFetchedResultsChangeType,
-        newIndexPath: NSIndexPath?) {
+    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>,
+        didChange anObject: Any,
+        at indexPath: IndexPath?,
+        for type: NSFetchedResultsChangeType,
+        newIndexPath: IndexPath?) {
     
             switch type {
             
-                case .Insert:
-                tableView.insertRowsAtIndexPaths([newIndexPath!], withRowAnimation: .Fade)
-                case .Delete:
-                tableView.deleteRowsAtIndexPaths([indexPath!], withRowAnimation: .Fade)
-                case .Update:
-                tableView.reloadRowsAtIndexPaths([indexPath!], withRowAnimation: .Fade)
+                case .insert:
+                tableView.insertRows(at: [newIndexPath!], with: .fade)
+                case .delete:
+                tableView.deleteRows(at: [indexPath!], with: .fade)
+                case .update:
+                tableView.reloadRows(at: [indexPath!], with: .fade)
                 default:
                 tableView.reloadData()
             }
             restaurants = controller.fetchedObjects as! [Restaurant]
     }
     
-    func controllerDidChangeContent(controller: NSFetchedResultsController) {
+    func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
         tableView.endUpdates()
     }
     
     
     // Search bar filter
-    func filterContentForSearchText(searchText: String) {
+    func filterContentForSearchText(_ searchText: String) {
         searchResults = restaurants.filter({(restaurant: Restaurant) -> Bool in
-            let nameMatch = restaurant.name.rangeOfString(searchText, options: NSStringCompareOptions.CaseInsensitiveSearch)
+            let nameMatch = restaurant.name.range(of: searchText, options: NSString.CompareOptions.caseInsensitive)
             return nameMatch != nil
         })
     }
     
     // Search bar update
-    func updateSearchResultsForSearchController(searchController: UISearchController) {
+    func updateSearchResults(for searchController: UISearchController) {
         let searchText = searchController.searchBar.text
         filterContentForSearchText(searchText!)
         tableView.reloadData()
     }
     
+    
+    
     // MARK: - Navigation
     
     // In a storyboard-based application - segue very important
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showRestaurantDetail" {
             if let indexPath = self.tableView.indexPathForSelectedRow {
                 
                 // use destinationViewController can get the instance of the target view controller
-                let destinationController = segue.destinationViewController as! DetailViewController
-                destinationController.restaurant = (searchController.active) ? searchResults[indexPath.row] : restaurants[indexPath.row]
+                let destinationController = segue.destination as! DetailViewController
+                destinationController.restaurant = (searchController.isActive) ? searchResults[indexPath.row] : restaurants[indexPath.row]
                 
                 destinationController.hidesBottomBarWhenPushed = true
             }
         }
     }
     
-    @IBAction func unwindToHomeScreen(segue:UIStoryboardSegue) {
+    @IBAction func unwindToHomeScreen(_ segue:UIStoryboardSegue) {
     
     }
 }

@@ -16,8 +16,8 @@ class WebViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        if let url = NSURL(string: "https://zokoma.wordpress.com/") {
-            let request = NSURLRequest(URL: url)
+        if let url = URL(string: "https://zokoma.wordpress.com/") {
+            let request = URLRequest(url: url)
             webView.loadRequest(request)
         }
     }

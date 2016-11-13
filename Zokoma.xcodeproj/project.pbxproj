@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		673D4934226F9C602275A90F /* Pods_Zokoma.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D97CBACA9563FCDAE6751D81 /* Pods_Zokoma.framework */; };
+		8204ABC91D44A94C00B31E14 /* container in Resources */ = {isa = PBXBuildFile; fileRef = 8204ABC81D44A94C00B31E14 /* container */; };
 		820F56631C04309F00EBC7DE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820F56621C04309F00EBC7DE /* AppDelegate.swift */; };
 		820F56681C04309F00EBC7DE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 820F56661C04309F00EBC7DE /* Main.storyboard */; };
 		820F566A1C04309F00EBC7DE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 820F56691C04309F00EBC7DE /* Assets.xcassets */; };
@@ -15,11 +17,14 @@
 		820F56831C04309F00EBC7DE /* ZokomaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820F56821C04309F00EBC7DE /* ZokomaUITests.swift */; };
 		820F56911C04484700EBC7DE /* RestaurantTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820F56901C04484700EBC7DE /* RestaurantTableViewController.swift */; };
 		820F56931C04575B00EBC7DE /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820F56921C04575B00EBC7DE /* CustomTableViewCell.swift */; };
+		821331E81C291DF000DEB816 /* PageContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 821331E71C291DF000DEB816 /* PageContentViewController.swift */; };
+		821331EA1C29215900DEB816 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 821331E91C29215900DEB816 /* PageViewController.swift */; };
 		821B97AC1C0CA16700533591 /* ReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 821B97AB1C0CA16700533591 /* ReviewViewController.swift */; };
 		824C592A1C06CBAC00506CC3 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824C59291C06CBAC00506CC3 /* DetailViewController.swift */; };
 		824C592C1C06F36E00506CC3 /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824C592B1C06F36E00506CC3 /* Restaurant.swift */; };
 		824C59321C07653700506CC3 /* DetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824C59311C07653700506CC3 /* DetailTableViewCell.swift */; };
 		82520FF71C0F15D00022B38F /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82520FF61C0F15D00022B38F /* MapViewController.swift */; };
+		825352161D3FD074005F4EB6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 825352151D3FD074005F4EB6 /* GoogleService-Info.plist */; };
 		8257EE961C1AC649002E27A1 /* FeedMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8257EE951C1AC649002E27A1 /* FeedMapViewController.swift */; };
 		826FE0C31C1158E6005C8370 /* Zokoma.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 826FE0C11C1158E6005C8370 /* Zokoma.xcdatamodeld */; };
 		82841B131C194FF6004BA230 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82841B121C194FF6004BA230 /* CloudKit.framework */; };
@@ -30,6 +35,8 @@
 		82DEF3041C10433C00CBBC65 /* AddTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82DEF3031C10433C00CBBC65 /* AddTableViewController.swift */; };
 		82F0B6121C0DAC2A007B8134 /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F0B6111C0DAC2A007B8134 /* ShareViewController.swift */; };
 		82F0B6141C0DF7A3007B8134 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82F0B6131C0DF7A3007B8134 /* MapKit.framework */; };
+		B3263EDA0E4F0C21BB537239 /* Pods_ZokomaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62B5A287E9733139FD0952FA /* Pods_ZokomaUITests.framework */; };
+		B3CA7425690AA5BDDDCCF135 /* Pods_ZokomaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA65ABAE3611F9A7B8523EFC /* Pods_ZokomaTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +57,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		01A58EDDAB0684D65EB24BD4 /* Pods-ZokomaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZokomaTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ZokomaTests/Pods-ZokomaTests.release.xcconfig"; sourceTree = "<group>"; };
+		0D0419C63AA3C9EDF71BC7CF /* Pods-ZokomaUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZokomaUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ZokomaUITests/Pods-ZokomaUITests.release.xcconfig"; sourceTree = "<group>"; };
+		33D75D8E38BA06EE7BBDA2A9 /* Pods-ZokomaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZokomaTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ZokomaTests/Pods-ZokomaTests.debug.xcconfig"; sourceTree = "<group>"; };
+		3E814555D30E11A0E777BAFC /* Pods-Zokoma.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Zokoma.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Zokoma/Pods-Zokoma.debug.xcconfig"; sourceTree = "<group>"; };
+		627604D9468A5BF0D5F5071B /* Pods-Zokoma.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Zokoma.release.xcconfig"; path = "Pods/Target Support Files/Pods-Zokoma/Pods-Zokoma.release.xcconfig"; sourceTree = "<group>"; };
+		62B5A287E9733139FD0952FA /* Pods_ZokomaUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZokomaUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8204ABC81D44A94C00B31E14 /* container */ = {isa = PBXFileReference; lastKnownFileType = folder; path = container; sourceTree = "<group>"; };
 		820F565F1C04309F00EBC7DE /* Zokoma.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Zokoma.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		820F56621C04309F00EBC7DE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		820F56671C04309F00EBC7DE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -64,11 +78,15 @@
 		820F56841C04309F00EBC7DE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		820F56901C04484700EBC7DE /* RestaurantTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantTableViewController.swift; sourceTree = "<group>"; };
 		820F56921C04575B00EBC7DE /* CustomTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
+		821331E71C291DF000DEB816 /* PageContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageContentViewController.swift; sourceTree = "<group>"; };
+		821331E91C29215900DEB816 /* PageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
+		8213320C1C296CDA00DEB816 /* Zokoma-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Zokoma-Bridging-Header.h"; sourceTree = "<group>"; };
 		821B97AB1C0CA16700533591 /* ReviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewViewController.swift; sourceTree = "<group>"; };
 		824C59291C06CBAC00506CC3 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		824C592B1C06F36E00506CC3 /* Restaurant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
 		824C59311C07653700506CC3 /* DetailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailTableViewCell.swift; sourceTree = "<group>"; };
 		82520FF61C0F15D00022B38F /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		825352151D3FD074005F4EB6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		8257EE951C1AC649002E27A1 /* FeedMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedMapViewController.swift; sourceTree = "<group>"; };
 		826FE0C21C1158E6005C8370 /* Zokoma.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Zokoma.xcdatamodel; sourceTree = "<group>"; };
 		8274EA511C1FFC47007FF7BE /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -81,6 +99,9 @@
 		82DEF3031C10433C00CBBC65 /* AddTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddTableViewController.swift; sourceTree = "<group>"; };
 		82F0B6111C0DAC2A007B8134 /* ShareViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
 		82F0B6131C0DF7A3007B8134 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		AA65ABAE3611F9A7B8523EFC /* Pods_ZokomaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZokomaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CB7C4D433BDDBCE00A1FEF6C /* Pods-ZokomaUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZokomaUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ZokomaUITests/Pods-ZokomaUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		D97CBACA9563FCDAE6751D81 /* Pods_Zokoma.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Zokoma.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +111,7 @@
 			files = (
 				82F0B6141C0DF7A3007B8134 /* MapKit.framework in Frameworks */,
 				82841B131C194FF6004BA230 /* CloudKit.framework in Frameworks */,
+				673D4934226F9C602275A90F /* Pods_Zokoma.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -97,6 +119,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B3CA7425690AA5BDDDCCF135 /* Pods_ZokomaTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -104,6 +127,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B3263EDA0E4F0C21BB537239 /* Pods_ZokomaUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -113,6 +137,7 @@
 		820F56561C04309F00EBC7DE = {
 			isa = PBXGroup;
 			children = (
+				8204ABC81D44A94C00B31E14 /* container */,
 				8274EA511C1FFC47007FF7BE /* README.md */,
 				82841B121C194FF6004BA230 /* CloudKit.framework */,
 				82F0B6131C0DF7A3007B8134 /* MapKit.framework */,
@@ -120,6 +145,8 @@
 				820F56761C04309F00EBC7DE /* ZokomaTests */,
 				820F56811C04309F00EBC7DE /* ZokomaUITests */,
 				820F56601C04309F00EBC7DE /* Products */,
+				9ECBA27A99790AF571CA24BE /* Pods */,
+				B8B44BCCE896427764AEA8D7 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -136,6 +163,7 @@
 		820F56611C04309F00EBC7DE /* Zokoma */ = {
 			isa = PBXGroup;
 			children = (
+				825352151D3FD074005F4EB6 /* GoogleService-Info.plist */,
 				82841B111C193F17004BA230 /* Zokoma.entitlements */,
 				820F56621C04309F00EBC7DE /* AppDelegate.swift */,
 				820F56661C04309F00EBC7DE /* Main.storyboard */,
@@ -157,6 +185,9 @@
 				82841B141C195A66004BA230 /* FeedTableViewController.swift */,
 				82841B161C19873B004BA230 /* FeedDetailViewController.swift */,
 				8257EE951C1AC649002E27A1 /* FeedMapViewController.swift */,
+				821331E71C291DF000DEB816 /* PageContentViewController.swift */,
+				821331E91C29215900DEB816 /* PageViewController.swift */,
+				8213320C1C296CDA00DEB816 /* Zokoma-Bridging-Header.h */,
 			);
 			path = Zokoma;
 			sourceTree = "<group>";
@@ -179,6 +210,29 @@
 			path = ZokomaUITests;
 			sourceTree = "<group>";
 		};
+		9ECBA27A99790AF571CA24BE /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3E814555D30E11A0E777BAFC /* Pods-Zokoma.debug.xcconfig */,
+				627604D9468A5BF0D5F5071B /* Pods-Zokoma.release.xcconfig */,
+				33D75D8E38BA06EE7BBDA2A9 /* Pods-ZokomaTests.debug.xcconfig */,
+				01A58EDDAB0684D65EB24BD4 /* Pods-ZokomaTests.release.xcconfig */,
+				CB7C4D433BDDBCE00A1FEF6C /* Pods-ZokomaUITests.debug.xcconfig */,
+				0D0419C63AA3C9EDF71BC7CF /* Pods-ZokomaUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		B8B44BCCE896427764AEA8D7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D97CBACA9563FCDAE6751D81 /* Pods_Zokoma.framework */,
+				AA65ABAE3611F9A7B8523EFC /* Pods_ZokomaTests.framework */,
+				62B5A287E9733139FD0952FA /* Pods_ZokomaUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -186,9 +240,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 820F56871C04309F00EBC7DE /* Build configuration list for PBXNativeTarget "Zokoma" */;
 			buildPhases = (
+				67E97FEFC7290EA3BECD25A4 /* [CP] Check Pods Manifest.lock */,
 				820F565B1C04309F00EBC7DE /* Sources */,
 				820F565C1C04309F00EBC7DE /* Frameworks */,
 				820F565D1C04309F00EBC7DE /* Resources */,
+				BF93DFABAF5883637723631D /* [CP] Embed Pods Frameworks */,
+				6E615865DD6723982B01276A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -203,9 +260,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 820F568A1C04309F00EBC7DE /* Build configuration list for PBXNativeTarget "ZokomaTests" */;
 			buildPhases = (
+				5C6036A10D653E2FDF75DFC7 /* [CP] Check Pods Manifest.lock */,
 				820F566F1C04309F00EBC7DE /* Sources */,
 				820F56701C04309F00EBC7DE /* Frameworks */,
 				820F56711C04309F00EBC7DE /* Resources */,
+				F9300ACFA6BC4BBDE9A5AD8D /* [CP] Embed Pods Frameworks */,
+				32D73A99C555CCD7B3CB29AB /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -221,9 +281,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 820F568D1C04309F00EBC7DE /* Build configuration list for PBXNativeTarget "ZokomaUITests" */;
 			buildPhases = (
+				D9B0731A0724EDCEBB8B6E43 /* [CP] Check Pods Manifest.lock */,
 				820F567A1C04309F00EBC7DE /* Sources */,
 				820F567B1C04309F00EBC7DE /* Frameworks */,
 				820F567C1C04309F00EBC7DE /* Resources */,
+				EC043E0224C087A82D7772C8 /* [CP] Copy Pods Resources */,
+				5F5C72582A7891E29B678C8C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -241,13 +304,14 @@
 		820F56571C04309F00EBC7DE /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0710;
-				LastUpgradeCheck = 0710;
+				LastSwiftUpdateCheck = 0720;
+				LastUpgradeCheck = 0810;
 				ORGANIZATIONNAME = jiro9611;
 				TargetAttributes = {
 					820F565E1C04309F00EBC7DE = {
 						CreatedOnToolsVersion = 7.1.1;
 						DevelopmentTeam = 2DVC4H58RZ;
+						LastSwiftMigration = 0810;
 						SystemCapabilities = {
 							com.apple.Maps.iOS = {
 								enabled = 1;
@@ -260,11 +324,13 @@
 					820F56721C04309F00EBC7DE = {
 						CreatedOnToolsVersion = 7.1.1;
 						DevelopmentTeam = TC7WN99QX5;
+						LastSwiftMigration = 0810;
 						TestTargetID = 820F565E1C04309F00EBC7DE;
 					};
 					820F567D1C04309F00EBC7DE = {
 						CreatedOnToolsVersion = 7.1.1;
 						DevelopmentTeam = TC7WN99QX5;
+						LastSwiftMigration = 0810;
 						TestTargetID = 820F565E1C04309F00EBC7DE;
 					};
 				};
@@ -295,6 +361,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				820F566D1C04309F00EBC7DE /* LaunchScreen.storyboard in Resources */,
+				825352161D3FD074005F4EB6 /* GoogleService-Info.plist in Resources */,
+				8204ABC91D44A94C00B31E14 /* container in Resources */,
 				820F566A1C04309F00EBC7DE /* Assets.xcassets in Resources */,
 				820F56681C04309F00EBC7DE /* Main.storyboard in Resources */,
 			);
@@ -316,6 +384,144 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		32D73A99C555CCD7B3CB29AB /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ZokomaTests/Pods-ZokomaTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5C6036A10D653E2FDF75DFC7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		5F5C72582A7891E29B678C8C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ZokomaUITests/Pods-ZokomaUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		67E97FEFC7290EA3BECD25A4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		6E615865DD6723982B01276A /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Zokoma/Pods-Zokoma-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BF93DFABAF5883637723631D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Zokoma/Pods-Zokoma-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D9B0731A0724EDCEBB8B6E43 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		EC043E0224C087A82D7772C8 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ZokomaUITests/Pods-ZokomaUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F9300ACFA6BC4BBDE9A5AD8D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ZokomaTests/Pods-ZokomaTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		820F565B1C04309F00EBC7DE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -325,6 +531,7 @@
 				824C592C1C06F36E00506CC3 /* Restaurant.swift in Sources */,
 				821B97AC1C0CA16700533591 /* ReviewViewController.swift in Sources */,
 				82841B151C195A66004BA230 /* FeedTableViewController.swift in Sources */,
+				821331E81C291DF000DEB816 /* PageContentViewController.swift in Sources */,
 				82841B171C19873B004BA230 /* FeedDetailViewController.swift in Sources */,
 				820F56931C04575B00EBC7DE /* CustomTableViewCell.swift in Sources */,
 				82520FF71C0F15D00022B38F /* MapViewController.swift in Sources */,
@@ -335,6 +542,7 @@
 				82F0B6121C0DAC2A007B8134 /* ShareViewController.swift in Sources */,
 				824C592A1C06CBAC00506CC3 /* DetailViewController.swift in Sources */,
 				826FE0C31C1158E6005C8370 /* Zokoma.xcdatamodeld in Sources */,
+				821331EA1C29215900DEB816 /* PageViewController.swift in Sources */,
 				82B8839C1C170EC3004CE95A /* WebViewController.swift in Sources */,
 				82DEF3041C10433C00CBBC65 /* AddTableViewController.swift in Sources */,
 			);
@@ -404,8 +612,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -427,11 +637,12 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				VALID_ARCHS = armv7;
 			};
 			name = Debug;
 		};
@@ -448,8 +659,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -465,74 +678,180 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				VALIDATE_PRODUCT = YES;
+				VALID_ARCHS = armv7;
 			};
 			name = Release;
 		};
 		820F56881C04309F00EBC7DE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3E814555D30E11A0E777BAFC /* Pods-Zokoma.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Zokoma/Zokoma.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = Zokoma/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-l\"c++\"",
+					"-l\"sqlite3\"",
+					"-l\"z\"",
+					"-framework",
+					"\"AdSupport\"",
+					"-framework",
+					"\"AddressBook\"",
+					"-framework",
+					"\"CoreGraphics\"",
+					"-framework",
+					"\"FirebaseAnalytics\"",
+					"-framework",
+					"\"FirebaseInstanceID\"",
+					"-framework",
+					"\"GoogleInterchangeUtilities\"",
+					"-framework",
+					"\"GoogleSymbolUtilities\"",
+					"-framework",
+					"\"GoogleUtilities\"",
+					"-framework",
+					"\"SafariServices\"",
+					"-framework",
+					"\"StoreKit\"",
+					"-framework",
+					"\"SystemConfiguration\"",
+					"$(inherited)",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.jiro9611.Zokoma.zokoma;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Zokoma/Zokoma-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				VALID_ARCHS = armv7;
 			};
 			name = Debug;
 		};
 		820F56891C04309F00EBC7DE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 627604D9468A5BF0D5F5071B /* Pods-Zokoma.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Zokoma/Zokoma.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = Zokoma/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-l\"c++\"",
+					"-l\"sqlite3\"",
+					"-l\"z\"",
+					"-framework",
+					"\"AdSupport\"",
+					"-framework",
+					"\"AddressBook\"",
+					"-framework",
+					"\"CoreGraphics\"",
+					"-framework",
+					"\"FirebaseAnalytics\"",
+					"-framework",
+					"\"FirebaseInstanceID\"",
+					"-framework",
+					"\"GoogleInterchangeUtilities\"",
+					"-framework",
+					"\"GoogleSymbolUtilities\"",
+					"-framework",
+					"\"GoogleUtilities\"",
+					"-framework",
+					"\"SafariServices\"",
+					"-framework",
+					"\"StoreKit\"",
+					"-framework",
+					"\"SystemConfiguration\"",
+					"$(inherited)",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.jiro9611.Zokoma.zokoma;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Zokoma/Zokoma-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
+				VALID_ARCHS = armv7;
 			};
 			name = Release;
 		};
 		820F568B1C04309F00EBC7DE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 33D75D8E38BA06EE7BBDA2A9 /* Pods-ZokomaTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(PROJECT_DIR)",
+					"$(inherited)",
+				);
 				INFOPLIST_FILE = ZokomaTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jiro9611.ZokomaTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Zokoma.app/Zokoma";
 			};
 			name = Debug;
 		};
 		820F568C1C04309F00EBC7DE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 01A58EDDAB0684D65EB24BD4 /* Pods-ZokomaTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(PROJECT_DIR)",
+					"$(inherited)",
+				);
 				INFOPLIST_FILE = ZokomaTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jiro9611.ZokomaTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Zokoma.app/Zokoma";
 			};
 			name = Release;
 		};
 		820F568E1C04309F00EBC7DE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CB7C4D433BDDBCE00A1FEF6C /* Pods-ZokomaUITests.debug.xcconfig */;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = ZokomaUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jiro9611.ZokomaUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = Zokoma;
 				USES_XCTRUNNER = YES;
 			};
@@ -540,11 +859,17 @@
 		};
 		820F568F1C04309F00EBC7DE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0D0419C63AA3C9EDF71BC7CF /* Pods-ZokomaUITests.release.xcconfig */;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = ZokomaUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jiro9611.ZokomaUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = Zokoma;
 				USES_XCTRUNNER = YES;
 			};

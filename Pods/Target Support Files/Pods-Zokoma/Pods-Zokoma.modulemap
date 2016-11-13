@@ -1,0 +1,6 @@
+framework module Pods_Zokoma {
+  umbrella header "Pods-Zokoma-umbrella.h"
+
+  export *
+  module * { export * }
+}

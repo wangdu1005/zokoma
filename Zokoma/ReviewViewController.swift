@@ -17,15 +17,15 @@ class ReviewViewController: UIViewController {
         super.viewDidLoad()
 
         // Blur the background image
-        let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.Light)
+        let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.light)
         let blurEffectView = UIVisualEffectView(effect: blurEffect)
         blurEffectView.frame = view.bounds
         backgroundImageView.addSubview(blurEffectView)
         
         // Combining scale and translate transforms
-        let scale = CGAffineTransformMakeScale(0.0, 0.0)
-        let translate = CGAffineTransformMakeTranslation(0, 500)
-        dialogView.transform = CGAffineTransformConcat(scale, translate)
+        let scale = CGAffineTransform(scaleX: 0.0, y: 0.0)
+        let translate = CGAffineTransform(translationX: 0, y: 500)
+        dialogView.transform = scale.concatenating(translate)
     }
 
     override func didReceiveMemoryWarning() {
@@ -34,13 +34,13 @@ class ReviewViewController: UIViewController {
     }
     
     // http://stackoverflow.com/questions/32638488/nil-is-not-compatible-with-expected-argument-type-uiviewanimationoptions
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
 
-        UIView.animateWithDuration(0.7, delay: 0.0, usingSpringWithDamping: 0.6, initialSpringVelocity: 0.5, options: [], animations: {
+        UIView.animate(withDuration: 0.7, delay: 0.0, usingSpringWithDamping: 0.6, initialSpringVelocity: 0.5, options: [], animations: {
             
-            let scale = CGAffineTransformMakeScale(1, 1)
-            let translate = CGAffineTransformMakeTranslation(0, 0)
-            self.dialogView.transform = CGAffineTransformConcat(scale, translate)
+            let scale = CGAffineTransform(scaleX: 1, y: 1)
+            let translate = CGAffineTransform(translationX: 0, y: 0)
+            self.dialogView.transform = scale.concatenating(translate)
             
             }, completion: nil)
     }

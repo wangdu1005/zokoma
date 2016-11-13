@@ -8,11 +8,16 @@
 
 import UIKit
 import MessageUI
+import FirebaseAnalytics
 
 class AboutViewController: UIViewController, MFMailComposeViewControllerDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        FIRAnalytics.logEvent(withName: "view_item", parameters: [
+            "item_name": "AboutMeScreenView" as NSObject
+            ])
 
         // Do any additional setup after loading the view.
     }
@@ -22,26 +27,24 @@ class AboutViewController: UIViewController, MFMailComposeViewControllerDelegate
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func sendEmail (sender: AnyObject) {
-//        if MFMailComposeViewController.canSendMail() {
-//            let composer = MFMailComposeViewController()
-//            composer.mailComposeDelegate = self
-//            composer.setToRecipients(["jiro.lin9611@gmail.com"])
-//            composer.navigationBar.tintColor = UIColor.whiteColor()
-//            presentViewController(composer, animated: true, completion: {
-//                UIApplication.sharedApplication().setStatusBarStyle(.LightContent, animated: false)
-//            })
-//        }
+    @IBAction func sendEmail (_ sender: AnyObject) {
+        
+        FIRAnalytics.logEvent(withName: "sendEmail", parameters: [
+            "email": "wangdu1005@gmail.com" as NSObject,
+            "content_type": "sedn_email_category" as NSObject,
+            "item_id": "sendEmailAction" as NSObject
+            ])
+        
+        print("Contact US Button Clicked")
         
         if MFMailComposeViewController.canSendMail() {
             let composer = MFMailComposeViewController()
             
             composer.mailComposeDelegate = self
             composer.setToRecipients(["zokoma.service@gmail.com"])
-            composer.navigationBar.tintColor = UIColor.whiteColor()
+            composer.navigationBar.tintColor = UIColor.white
             
-            //            presentViewController(composer, animated: true, completion: nil)
-            presentViewController(composer, animated: true, completion: {
+            present(composer, animated: true, completion: {
                 
 //                UIApplication.sharedApplication().setStatusBarStyle(.LightContent, animated: false)
                 
@@ -51,34 +54,19 @@ class AboutViewController: UIViewController, MFMailComposeViewControllerDelegate
         }
     }
     
-//    func mailComposeController(controller: MFMailComposeViewController, didFinishWithResult result: MFMailComposeResult, error: NSError?) {
-//        switch result.rawValue {
-//        
-//            case MFMailComposeResultCancelled.rawValue: print("Mail cancelled")
-//            case MFMailComposeResultSaved.rawValue: print("Mail saved")
-//            case MFMailComposeResultSent.rawValue: print("Mail sent")
-//            case MFMailComposeResultFailed.rawValue: print("Failed to send mail: \(error?.localizedDescription)")
-//            default:
-//                break
-//        }
-//        
-//        // Dismiss the mail interface
-//        dismissViewControllerAnimated(true, completion: nil)
-//    }
-    
-    func mailComposeController(controller: MFMailComposeViewController, didFinishWithResult result: MFMailComposeResult, error: NSError?) {
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
         
         switch result.rawValue {
-        case MFMailComposeResultCancelled.rawValue:
+        case MFMailComposeResult.cancelled.rawValue:
             print("Mail cancelled")
             
-        case MFMailComposeResultSaved.rawValue:
+        case MFMailComposeResult.saved.rawValue:
             print("Mail saved")
             
-        case MFMailComposeResultSent.rawValue:
+        case MFMailComposeResult.sent.rawValue:
             print("Mail sent")
             
-        case MFMailComposeResultFailed.rawValue:
+        case MFMailComposeResult.failed.rawValue:
             print("Failed to send mail: \(error?.localizedDescription)")
             
         default:
@@ -86,9 +74,19 @@ class AboutViewController: UIViewController, MFMailComposeViewControllerDelegate
         }
         
         // Dismiss the Mail interface
-        dismissViewControllerAnimated(true, completion: nil)
+        dismiss(animated: true, completion: nil)
     }
+    
+    
 
+    @IBAction func visitWebSite(_ sender: AnyObject) {
+        
+        FIRAnalytics.logEvent(withName: "select_content", parameters: [
+            "content_type": "Website" as NSObject,
+            "item_id": "visit_official_website" as NSObject
+            ])
+    
+    }
     
     /*
     // MARK: - Navigation
