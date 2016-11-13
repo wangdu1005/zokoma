@@ -2,6 +2,12 @@
 
 You can share your record of delicious foods or favorite restaurants on Zokoma, and your friends and world people can see it.
 
+## Tools
+
+Language: Swift 3.0
+DB: Parse, Firebase, Cloudkit
+Analytics: Firebase Analytics
+
 ## Usage
 
 Please go to branch develop to download the test app file.
