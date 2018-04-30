@@ -8,8 +8,8 @@
 
 import UIKit
 import CoreData
-import Parse
-import Bolts
+//import Parse
+//import Bolts
 import Firebase
 import FirebaseAnalytics
 import FirebaseStorage
